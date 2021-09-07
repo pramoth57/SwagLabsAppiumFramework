@@ -5,7 +5,13 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Before;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -41,22 +47,42 @@ public class SwagLabTest extends base{
 
 	
 	@BeforeTest
-	public void killAllNodesandStartService() throws IOException, InterruptedException
+	public void PreCondition() throws IOException, InterruptedException
 	{
 		
 		Runtime.getRuntime().exec("taskkill /F /IM node.exe");
 		logger.info("Kill Existing Appium Instance");
 		Thread.sleep(3000);
-		logger.info("********Test Started**********");
+		logger.info("********Test Suit Started**********");
 		
 		
 	}
 	
 	@AfterTest
-	public void stoptService() throws IOException, InterruptedException
+	public void PostCondition() throws IOException, InterruptedException
 	{
 		
-		logger.info("********Test Ended**********");
+		logger.info("********Test Suit Ended**********");
+	}
+	
+	@BeforeMethod
+	public void PreTestCondition() throws IOException, InterruptedException
+	{
+		
+		
+		logger.info("********Test Case Execution Started**********");
+		
+		
+	}
+	
+	@AfterMethod
+	public void PostTestCondition() throws IOException, InterruptedException
+	{
+		
+		
+		logger.info("********Test Case Execution Ended**********");
+		
+		
 	}
 	
 	@Test (enabled = true)
