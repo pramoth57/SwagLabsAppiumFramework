@@ -1,4 +1,4 @@
-package practise.AppiumFramework;
+package com.SwagLabs.Utilities;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,7 +19,6 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
-import managers.FileReaderManager;
 
 public class base {
 	public static AppiumDriverLocalService service;

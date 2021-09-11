@@ -1,24 +1,20 @@
 package practise.AppiumFramework;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Before;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.SwagLabs.Utilities.PageObjectManager;
+import com.SwagLabs.Utilities.base;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import managers.PageObjectManager;
 import pageObjects.SwagLabs_CheckoutComplete;
 import pageObjects.SwagLabs_CheckoutInformation;
 import pageObjects.SwagLabs_CheckoutOverView;
@@ -70,6 +66,8 @@ public class SwagLabTest extends base{
 	{
 		
 		
+		
+		
 		logger.info("********Test Case Execution Started**********");
 		
 		
@@ -91,34 +89,21 @@ public class SwagLabTest extends base{
 		
 		service = startServer();
 		
-		
-		
 		driver=capabilities("swagLagsapp");		
-		logger.info("App Started");		
-		
+		logger.info("App Started");				
 		pageObjectManager = new PageObjectManager(driver);
-		loginPage = pageObjectManager.get_SwagLabs_LoginPage_Page();
-		productPage = pageObjectManager.get_SwagLabs_ProductPage_Page();
-		yourcart = pageObjectManager.get_SwagLabs_YourCartPage_Page();
-		checkoutInfo = pageObjectManager.get_SwagLabs_CheckoutInformation_Page();
-		checkoutOverview = pageObjectManager.get_SwagLabs_CheckoutOverView_Page();
-		checkOutComplete = pageObjectManager.getSwagLabs_CheckoutComplete_Page();
 		
-		
-		
-
-		
-		loginPage.Login();	
+		pageObjectManager.get_SwagLabs_LoginPage_Page().Login();	
 		logger.info("Login Successfull");
-		productPage.addSingleProduct();		
+		pageObjectManager.get_SwagLabs_ProductPage_Page().addSingleProduct();		
 		logger.info("Product Added to Cart");
-		yourcart.Checkout();		
+		pageObjectManager.get_SwagLabs_YourCartPage_Page().Checkout();		
 		logger.info("Product Checked out of Cart");
-		checkoutInfo.Checkout();
+		pageObjectManager.get_SwagLabs_CheckoutInformation_Page().Checkout();
 		logger.info("Customer Details Added Successfully");		
-		checkoutOverview.Checkoutoverview_finish();	
+		pageObjectManager.get_SwagLabs_CheckoutOverView_Page().Checkoutoverview_finish();	
 		logger.info("Order Confirmed");		
-		checkOutComplete.CheckoutComplete();
+		pageObjectManager.getSwagLabs_CheckoutComplete_Page().CheckoutComplete();
 		service.stop();
 		
 
@@ -126,7 +111,7 @@ public class SwagLabTest extends base{
 
 	}
 	
-	@Test (enabled = true)
+	@Test (enabled = false)
 	public void SwagLabs_MultipleProductCheckout() throws IOException, InterruptedException 
 	{
 		service = startServer();
@@ -167,7 +152,7 @@ public class SwagLabTest extends base{
 
 	}
 	
-	@Test (enabled = true)
+	@Test (enabled = false)
 	public void SwagLabs_MultipleProductAdd_RemoveAll_Checkout() throws IOException, InterruptedException 
 	{
 		service = startServer();
@@ -206,7 +191,7 @@ public class SwagLabTest extends base{
 
 	}
 	
-	@Test (enabled = true)
+	@Test (enabled = false)
 	public void SwagLabs_AddProduct_Remove_Checkout() throws IOException, InterruptedException 
 	{
 		service = startServer();
@@ -242,7 +227,7 @@ public class SwagLabTest extends base{
 
 	}
 	
-	@Test (enabled = true)
+	@Test (enabled = false)
 	public void SwagLabs_AddProduct_ContinueShopping_Checkout() throws IOException, InterruptedException 
 	{
 		service = startServer();
@@ -284,7 +269,7 @@ public class SwagLabTest extends base{
 	}
 	
 	
-	@Test (enabled = true)
+	@Test (enabled = false)
 	public void SwagLabs_AddProduct_Checkout_Cancel() throws IOException, InterruptedException 
 	{
 		service = startServer();
@@ -315,7 +300,7 @@ public class SwagLabTest extends base{
 
 	}
 	
-	@Test (enabled = true)
+	@Test (enabled = false)
 	public void SwagLabs_AddProduct_Checkout_FinalCancel() throws IOException, InterruptedException 
 	{
 		service = startServer();
@@ -353,7 +338,7 @@ public class SwagLabTest extends base{
 
 	}
 	
-	@Test (enabled = true)
+	@Test (enabled = false)
 	public void SwagLabs_AddProduct_Checkout_AmountValidation() throws IOException, InterruptedException 
 	{
 		service = startServer();

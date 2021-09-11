@@ -1,4 +1,4 @@
-package managers;
+package com.SwagLabs.Utilities;
 
 import org.openqa.selenium.WebDriver;
 

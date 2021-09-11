@@ -5,9 +5,11 @@
     <classes>
       <class name="practise.AppiumFramework.SwagLabTest">
         <methods>
-          <include name="killAllNodesandStartService"/>
-          <include name="stoptService"/>
-          <include name="SwagLabs_AddProduct_Checkout_AmountValidation"/>
+          <include name="PostTestCondition"/>
+          <include name="PreCondition"/>
+          <include name="SwagLabs_SanityScenario"/>
+          <include name="PostCondition"/>
+          <include name="PreTestCondition"/>
         </methods>
       </class> <!-- practise.AppiumFramework.SwagLabTest -->
     </classes>

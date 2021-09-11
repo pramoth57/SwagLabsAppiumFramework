@@ -1,6 +1,4 @@
-package managers;
-
-import practise.AppiumFramework.ConfigFileReader;
+package com.SwagLabs.Utilities;
 
 public class FileReaderManager {
 

@@ -1,4 +1,4 @@
-package practise.AppiumFramework;
+package com.SwagLabs.Utilities;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -10,7 +10,7 @@ import java.util.Properties;
 public class ConfigFileReader {
 
 	private Properties properties;
-	private final String propertyFilePath= System.getProperty("user.dir")+"\\src\\main\\java\\practise\\AppiumFramework\\global.properties";
+	private final String propertyFilePath= System.getProperty("user.dir")+"\\src\\main\\java\\\\resources\\global.properties";
 
 
 	public ConfigFileReader(){

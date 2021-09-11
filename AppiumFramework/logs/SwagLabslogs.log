@@ -65,3 +65,53 @@
 [INFO ] 2021-09-07 13:22:26.737 [main] SwagLabTest - Order Confirmed
 [INFO ] 2021-09-07 13:22:28.326 [main] SwagLabTest - ********Test Case Execution Ended**********
 [INFO ] 2021-09-07 13:22:28.327 [main] SwagLabTest - ********Test Suit Ended**********
+[INFO ] 2021-09-07 14:49:24.034 [main] SwagLabTest - Kill Existing Appium Instance
+[INFO ] 2021-09-07 14:49:27.038 [main] SwagLabTest - ********Test Suit Started**********
+[INFO ] 2021-09-07 14:50:00.250 [main] SwagLabTest - Kill Existing Appium Instance
+[INFO ] 2021-09-07 14:50:03.253 [main] SwagLabTest - ********Test Suit Started**********
+[INFO ] 2021-09-07 14:50:55.403 [main] SwagLabTest - Kill Existing Appium Instance
+[INFO ] 2021-09-07 14:50:58.407 [main] SwagLabTest - ********Test Suit Started**********
+[INFO ] 2021-09-07 14:51:19.041 [main] SwagLabTest - Kill Existing Appium Instance
+[INFO ] 2021-09-07 14:51:22.046 [main] SwagLabTest - ********Test Suit Started**********
+[INFO ] 2021-09-07 14:51:22.081 [main] SwagLabTest - ********Test Case Execution Started**********
+[INFO ] 2021-09-07 14:52:20.001 [main] SwagLabTest - App Started
+[INFO ] 2021-09-07 14:52:24.571 [main] SwagLabTest - Login Successfull
+[INFO ] 2021-09-07 14:52:27.243 [main] SwagLabTest - Product Added to Cart
+[INFO ] 2021-09-07 14:52:29.420 [main] SwagLabTest - Product Checked out of Cart
+[INFO ] 2021-09-07 14:52:33.890 [main] SwagLabTest - Customer Details Added Successfully
+[INFO ] 2021-09-07 14:52:37.766 [main] SwagLabTest - Order Confirmed
+[INFO ] 2021-09-07 14:52:39.437 [main] SwagLabTest - ********Test Case Execution Ended**********
+[INFO ] 2021-09-07 14:52:39.440 [main] SwagLabTest - ********Test Suit Ended**********
+[INFO ] 2021-09-08 18:30:39.438 [main] SwagLabTest - Kill Existing Appium Instance
+[INFO ] 2021-09-08 18:30:42.462 [main] SwagLabTest - ********Test Suit Started**********
+[INFO ] 2021-09-08 18:30:42.487 [main] SwagLabTest - ********Test Case Execution Started**********
+[INFO ] 2021-09-08 18:31:55.474 [main] SwagLabTest - App Started
+[INFO ] 2021-09-08 18:32:04.032 [main] SwagLabTest - Login Successfull
+[INFO ] 2021-09-08 18:32:06.590 [main] SwagLabTest - Product Added to Cart
+[INFO ] 2021-09-08 18:32:08.488 [main] SwagLabTest - Product Checked out of Cart
+[INFO ] 2021-09-08 18:32:12.883 [main] SwagLabTest - Customer Details Added Successfully
+[INFO ] 2021-09-08 18:32:17.306 [main] SwagLabTest - Order Confirmed
+[INFO ] 2021-09-08 18:32:18.804 [main] SwagLabTest - ********Test Case Execution Ended**********
+[INFO ] 2021-09-08 18:32:18.806 [main] SwagLabTest - ********Test Suit Ended**********
+[INFO ] 2021-09-11 23:03:48.013 [main] SwagLabTest - Kill Existing Appium Instance
+[INFO ] 2021-09-11 23:03:51.032 [main] SwagLabTest - ********Test Suit Started**********
+[INFO ] 2021-09-11 23:03:51.066 [main] SwagLabTest - ********Test Case Execution Started**********
+[INFO ] 2021-09-11 23:04:33.512 [main] SwagLabTest - App Started
+[INFO ] 2021-09-11 23:04:38.125 [main] SwagLabTest - Login Successfull
+[INFO ] 2021-09-11 23:04:40.861 [main] SwagLabTest - Product Added to Cart
+[INFO ] 2021-09-11 23:04:42.631 [main] SwagLabTest - Product Checked out of Cart
+[INFO ] 2021-09-11 23:04:48.112 [main] SwagLabTest - Customer Details Added Successfully
+[INFO ] 2021-09-11 23:04:52.667 [main] SwagLabTest - Order Confirmed
+[INFO ] 2021-09-11 23:04:54.313 [main] SwagLabTest - ********Test Case Execution Ended**********
+[INFO ] 2021-09-11 23:04:54.316 [main] SwagLabTest - ********Test Suit Ended**********
+[INFO ] 2021-09-11 23:07:41.776 [main] SwagLabTest - Kill Existing Appium Instance
+[INFO ] 2021-09-11 23:07:44.781 [main] SwagLabTest - ********Test Suit Started**********
+[INFO ] 2021-09-11 23:07:44.814 [main] SwagLabTest - ********Test Case Execution Started**********
+[INFO ] 2021-09-11 23:07:59.537 [main] SwagLabTest - App Started
+[INFO ] 2021-09-11 23:08:03.736 [main] SwagLabTest - Login Successfull
+[INFO ] 2021-09-11 23:08:06.383 [main] SwagLabTest - Product Added to Cart
+[INFO ] 2021-09-11 23:08:09.526 [main] SwagLabTest - Product Checked out of Cart
+[INFO ] 2021-09-11 23:08:14.795 [main] SwagLabTest - Customer Details Added Successfully
+[INFO ] 2021-09-11 23:08:18.883 [main] SwagLabTest - Order Confirmed
+[INFO ] 2021-09-11 23:08:20.563 [main] SwagLabTest - ********Test Case Execution Ended**********
+[INFO ] 2021-09-11 23:08:20.565 [main] SwagLabTest - ********Test Suit Ended**********
