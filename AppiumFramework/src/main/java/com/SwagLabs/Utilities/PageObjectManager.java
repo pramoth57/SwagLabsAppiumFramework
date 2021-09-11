@@ -2,14 +2,15 @@ package com.SwagLabs.Utilities;
 
 import org.openqa.selenium.WebDriver;
 
+import com.SwagLabs.Pages.SwagLabs_CheckoutComplete;
+import com.SwagLabs.Pages.SwagLabs_CheckoutInformation;
+import com.SwagLabs.Pages.SwagLabs_CheckoutOverView;
+import com.SwagLabs.Pages.SwagLabs_LoginPage;
+import com.SwagLabs.Pages.SwagLabs_ProductPage;
+import com.SwagLabs.Pages.SwagLabs_YourCartPage;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import pageObjects.SwagLabs_CheckoutComplete;
-import pageObjects.SwagLabs_CheckoutInformation;
-import pageObjects.SwagLabs_CheckoutOverView;
-import pageObjects.SwagLabs_LoginPage;
-import pageObjects.SwagLabs_ProductPage;
-import pageObjects.SwagLabs_YourCartPage;
 
 public class PageObjectManager 
 {

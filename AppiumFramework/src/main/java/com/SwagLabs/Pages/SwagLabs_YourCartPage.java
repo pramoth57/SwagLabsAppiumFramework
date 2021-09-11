@@ -1,4 +1,4 @@
-package pageObjects;
+package com.SwagLabs.Pages;
 
 import java.util.List;
 

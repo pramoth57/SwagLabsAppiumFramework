@@ -1,4 +1,4 @@
-package pageObjects;
+package com.SwagLabs.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

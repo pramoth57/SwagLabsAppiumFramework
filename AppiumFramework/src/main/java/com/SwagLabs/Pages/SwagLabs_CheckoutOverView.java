@@ -1,4 +1,4 @@
-package pageObjects;
+package com.SwagLabs.Pages;
 
 import static org.testng.Assert.assertEquals;
 
