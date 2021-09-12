@@ -1,4 +1,4 @@
-package practise.AppiumFramework;
+package com.SwagLabs.TestCases;
 
 import java.io.IOException;
 
@@ -43,7 +43,7 @@ public class SwagLabTest extends base{
 
 	
 	@BeforeTest
-	public void PreCondition() throws IOException, InterruptedException
+	public void preCondition() throws IOException, InterruptedException
 	{
 		
 		Runtime.getRuntime().exec("taskkill /F /IM node.exe");
@@ -55,14 +55,14 @@ public class SwagLabTest extends base{
 	}
 	
 	@AfterTest
-	public void PostCondition() throws IOException, InterruptedException
+	public void postCondition() throws IOException, InterruptedException
 	{
 		
 		logger.info("********Test Suit Ended**********");
 	}
 	
 	@BeforeMethod
-	public void PreTestCondition() throws IOException, InterruptedException
+	public void preTestCondition() throws IOException, InterruptedException
 	{
 		
 		
@@ -74,7 +74,7 @@ public class SwagLabTest extends base{
 	}
 	
 	@AfterMethod
-	public void PostTestCondition() throws IOException, InterruptedException
+	public void postTestCondition() throws IOException, InterruptedException
 	{
 		
 		
@@ -87,7 +87,7 @@ public class SwagLabTest extends base{
 	public void SwagLabs_SanityScenario() throws IOException, InterruptedException 
 	{
 		
-		service = startServer();
+		appium_Service = initiate_AppiumService();
 		
 		driver=capabilities("swagLagsapp");		
 		logger.info("App Started");				
@@ -104,7 +104,8 @@ public class SwagLabTest extends base{
 		pageObjectManager.get_SwagLabs_CheckoutOverView_Page().Checkoutoverview_finish();	
 		logger.info("Order Confirmed");		
 		pageObjectManager.getSwagLabs_CheckoutComplete_Page().CheckoutComplete();
-		service.stop();
+		
+		appium_Service.stop();
 		
 
 
@@ -114,7 +115,7 @@ public class SwagLabTest extends base{
 	@Test (enabled = false)
 	public void SwagLabs_MultipleProductCheckout() throws IOException, InterruptedException 
 	{
-		service = startServer();
+		appium_Service = initiate_AppiumService();
 		
 		
 		driver=capabilities("swagLagsapp");		
@@ -145,7 +146,7 @@ public class SwagLabTest extends base{
 		checkoutOverview.Checkoutoverview_finish();		
 		logger.info("Order Confirmed");	
 		checkOutComplete.CheckoutComplete();
-		service.stop();
+		appium_Service.stop();
 		
 
 
@@ -155,7 +156,7 @@ public class SwagLabTest extends base{
 	@Test (enabled = false)
 	public void SwagLabs_MultipleProductAdd_RemoveAll_Checkout() throws IOException, InterruptedException 
 	{
-		service = startServer();
+		appium_Service = initiate_AppiumService();
 		
 		driver=capabilities("swagLagsapp");		
 		logger.info("App Started");		
@@ -184,7 +185,7 @@ public class SwagLabTest extends base{
 		checkoutOverview.Checkoutoverview_finish();	
 		logger.info("Order Confirmed");	
 		checkOutComplete.CheckoutComplete();
-		service.stop();
+		appium_Service.stop();
 		
 
 
@@ -194,7 +195,7 @@ public class SwagLabTest extends base{
 	@Test (enabled = false)
 	public void SwagLabs_AddProduct_Remove_Checkout() throws IOException, InterruptedException 
 	{
-		service = startServer();
+		appium_Service = initiate_AppiumService();
 		
 		driver=capabilities("swagLagsapp");		
 		logger.info("App Started");		
@@ -220,7 +221,7 @@ public class SwagLabTest extends base{
 		checkoutOverview.Checkoutoverview_finish();		
 		logger.info("Order Confirmed");	
 		checkOutComplete.CheckoutComplete();
-		service.stop();
+		appium_Service.stop();
 		
 
 
@@ -230,7 +231,7 @@ public class SwagLabTest extends base{
 	@Test (enabled = false)
 	public void SwagLabs_AddProduct_ContinueShopping_Checkout() throws IOException, InterruptedException 
 	{
-		service = startServer();
+		appium_Service = initiate_AppiumService();
 		
 
 		driver=capabilities("swagLagsapp");		
@@ -262,7 +263,7 @@ public class SwagLabTest extends base{
 		checkoutOverview.Checkoutoverview_finish();	
 		logger.info("Order Confirmed");	
 		checkOutComplete.CheckoutComplete();
-		service.stop();		
+		appium_Service.stop();		
 
 
 
@@ -272,7 +273,7 @@ public class SwagLabTest extends base{
 	@Test (enabled = false)
 	public void SwagLabs_AddProduct_Checkout_Cancel() throws IOException, InterruptedException 
 	{
-		service = startServer();
+		appium_Service = initiate_AppiumService();
 		
 
 		driver=capabilities("swagLagsapp");		
@@ -296,14 +297,14 @@ public class SwagLabTest extends base{
 		checkoutInfo.cancel();	
 		logger.info("Order Cancelled on Checkout Information Screen");		
 				
-		service.stop();		
+		appium_Service.stop();		
 
 	}
 	
 	@Test (enabled = false)
 	public void SwagLabs_AddProduct_Checkout_FinalCancel() throws IOException, InterruptedException 
 	{
-		service = startServer();
+		appium_Service = initiate_AppiumService();
 		
 
 		driver=capabilities("swagLagsapp");		
@@ -332,7 +333,7 @@ public class SwagLabTest extends base{
 		logger.info("Order Cancelled");	
 			
 		
-		service.stop();		
+		appium_Service.stop();		
 
 
 
@@ -341,7 +342,7 @@ public class SwagLabTest extends base{
 	@Test (enabled = false)
 	public void SwagLabs_AddProduct_Checkout_AmountValidation() throws IOException, InterruptedException 
 	{
-		service = startServer();
+		appium_Service = initiate_AppiumService();
 		
 
 		driver=capabilities("swagLagsapp");		
@@ -370,7 +371,7 @@ public class SwagLabTest extends base{
 		logger.info("Order Confirmed and Both Product Total and Cart Total is Validated");	
 		checkOutComplete.CheckoutComplete();
 		
-		service.stop();		
+		appium_Service.stop();		
 
 
 

@@ -21,19 +21,19 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 
 public class base {
-	public static AppiumDriverLocalService service;
+	public static AppiumDriverLocalService appium_Service;
 	public static AndroidDriver<AndroidElement>  driver;
 
-	public AppiumDriverLocalService startServer()
+	public AppiumDriverLocalService initiate_AppiumService()
 	{
 
 		boolean flag= checkIfServerIsRunnning(4723);
 		if(!flag)
 		{		
-			service=AppiumDriverLocalService.buildDefaultService();
-			service.start();
+			appium_Service=AppiumDriverLocalService.buildDefaultService();
+			appium_Service.start();
 		}
-		return service;
+		return appium_Service;
 		
 
 	}
@@ -69,6 +69,7 @@ public class base {
 		
 		File appDir = new File("src");
 		File app = new File(appDir, FileReaderManager.getInstance().getConfigReader().getswagLagsappApp());
+		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		String deviceType= FileReaderManager.getInstance().getConfigReader().getdeviceType();
 		String device=(String) FileReaderManager.getInstance().getConfigReader().getdevice();
