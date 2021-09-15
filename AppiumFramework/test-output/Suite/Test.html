@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>8/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>11/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Sep 06 23:17:09 IST 2021</td>
+<td>Started on:</td><td>Wed Sep 15 16:00:42 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>282 seconds (282171 ms)</td>
+<tr><td>Total time:</td><td>553 seconds (553808 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,85 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC09()'><b>swagLabsTC09</b><br>Test class: com.SwagLabs.TestCases.SwagLab_ProblemUser_TC</td>
+<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1631702309495.png
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMediaFileLocal(LocalMediaStorageHandler.java:77)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMedia(LocalMediaStorageHandler.java:29)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.autoCreateRelativePathMedia(BasicFileReporter.java:260)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(BasicFileReporter.java:243)
+	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
+	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
+	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
+	at com.SwagLabs.Utilities.Base.yourCart_ProductValidation(Base.java:448)
+	at com.SwagLabs.Pages.SwagLabs_YourCartPage.checkout(SwagLabs_YourCartPage.java:44)
+	at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC09(SwagLab_ProblemUser_TC.java:49)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1483243447", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1483243447'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1631702309495.png
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMediaFileLocal(LocalMediaStorageHandler.java:77)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMedia(LocalMediaStorageHandler.java:29)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.autoCreateRelativePathMedia(BasicFileReporter.java:260)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(BasicFileReporter.java:243)
+	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
+	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
+	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
+	at com.SwagLabs.Utilities.Base.yourCart_ProductValidation(Base.java:448)
+	at com.SwagLabs.Pages.SwagLabs_YourCartPage.checkout(SwagLabs_YourCartPage.java:44)
+	at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC09(SwagLab_ProblemUser_TC.java:49)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>41</td>
+<td>com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@3f6f6701</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,45 +154,60 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='practise.AppiumFramework.SwagLabTest.SwagLabs_AddProduct_Checkout_FinalCancel()'><b>SwagLabs_AddProduct_Checkout_FinalCancel</b><br>Test class: practise.AppiumFramework.SwagLabTest</td>
+<td title='com.SwagLabs.TestCases.SwagLabs_PostCondition.SetupExtentReport()'><b>SetupExtentReport</b><br>Test class: com.SwagLabs.TestCases.SwagLabs_PostCondition</td>
 <td></td>
-<td>29</td>
-<td>practise.AppiumFramework.SwagLabTest@21282ed8</td></tr>
+<td>0</td>
+<td>com.SwagLabs.TestCases.SwagLabs_PostCondition@3527942a</td></tr>
 <tr>
-<td title='practise.AppiumFramework.SwagLabTest.SwagLabs_MultipleProductAdd_RemoveAll_Checkout()'><b>SwagLabs_MultipleProductAdd_RemoveAll_Checkout</b><br>Test class: practise.AppiumFramework.SwagLabTest</td>
+<td title='com.SwagLabs.TestCases.SwagLab_TC03.swagLabsTC03()'><b>swagLabsTC03</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC03</td>
 <td></td>
-<td>39</td>
-<td>practise.AppiumFramework.SwagLabTest@21282ed8</td></tr>
+<td>44</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC03@273e7444</td></tr>
 <tr>
-<td title='practise.AppiumFramework.SwagLabTest.SwagLabs_MultipleProductCheckout()'><b>SwagLabs_MultipleProductCheckout</b><br>Test class: practise.AppiumFramework.SwagLabTest</td>
+<td title='com.SwagLabs.TestCases.SwagLab_TC04.swagLabsTC04()'><b>swagLabsTC04</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC04</td>
 <td></td>
-<td>38</td>
-<td>practise.AppiumFramework.SwagLabTest@21282ed8</td></tr>
+<td>45</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC04@7db12bb6</td></tr>
 <tr>
-<td title='practise.AppiumFramework.SwagLabTest.SwagLabs_AddProduct_Remove_Checkout()'><b>SwagLabs_AddProduct_Remove_Checkout</b><br>Test class: practise.AppiumFramework.SwagLabTest</td>
+<td title='com.SwagLabs.TestCases.SwagLab_TC06.swagLabsTC06()'><b>swagLabsTC06</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC06</td>
 <td></td>
 <td>33</td>
-<td>practise.AppiumFramework.SwagLabTest@21282ed8</td></tr>
+<td>com.SwagLabs.TestCases.SwagLab_TC06@272113c4</td></tr>
 <tr>
-<td title='practise.AppiumFramework.SwagLabTest.SwagLabs_AddProduct_Checkout_Cancel()'><b>SwagLabs_AddProduct_Checkout_Cancel</b><br>Test class: practise.AppiumFramework.SwagLabTest</td>
+<td title='com.SwagLabs.TestCases.SwagLab_TC08.swagLabsTC08()'><b>swagLabsTC08</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC08</td>
 <td></td>
-<td>28</td>
-<td>practise.AppiumFramework.SwagLabTest@21282ed8</td></tr>
+<td>59</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC08@242b836</td></tr>
 <tr>
-<td title='practise.AppiumFramework.SwagLabTest.SwagLabs_AddProduct_ContinueShopping_Checkout()'><b>SwagLabs_AddProduct_ContinueShopping_Checkout</b><br>Test class: practise.AppiumFramework.SwagLabTest</td>
+<td title='com.SwagLabs.TestCases.SwagLab_TC01.swagLabsTC01()'><b>swagLabsTC01</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC01</td>
 <td></td>
-<td>39</td>
-<td>practise.AppiumFramework.SwagLabTest@21282ed8</td></tr>
+<td>74</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC01@7bab3f1a</td></tr>
 <tr>
-<td title='practise.AppiumFramework.SwagLabTest.SwagLabs_SanityScenario()'><b>SwagLabs_SanityScenario</b><br>Test class: practise.AppiumFramework.SwagLabTest</td>
+<td title='com.SwagLabs.TestCases.SwagLab_TC05.swagLabsTC05()'><b>swagLabsTC05</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC05</td>
 <td></td>
-<td>33</td>
-<td>practise.AppiumFramework.SwagLabTest@21282ed8</td></tr>
+<td>53</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC05@783a467b</td></tr>
 <tr>
-<td title='practise.AppiumFramework.SwagLabTest.SwagLabs_AddProduct_Checkout_AmountValidation()'><b>SwagLabs_AddProduct_Checkout_AmountValidation</b><br>Test class: practise.AppiumFramework.SwagLabTest</td>
+<td title='com.SwagLabs.TestCases.SwagLab_TC07.swagLabsTC07()'><b>swagLabsTC07</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC07</td>
 <td></td>
-<td>36</td>
-<td>practise.AppiumFramework.SwagLabTest@21282ed8</td></tr>
+<td>45</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC07@2d52216b</td></tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC10()'><b>swagLabsTC10</b><br>Test class: com.SwagLabs.TestCases.SwagLab_ProblemUser_TC</td>
+<td></td>
+<td>83</td>
+<td>com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@3f6f6701</td></tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLab_TC02.swagLabsTC02()'><b>swagLabsTC02</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC02</td>
+<td></td>
+<td>41</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC02@52b1beb6</td></tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLabs_PreCondition.SetupExtentReport()'><b>SetupExtentReport</b><br>Test class: com.SwagLabs.TestCases.SwagLabs_PreCondition</td>
+<td></td>
+<td>0</td>
+<td>com.SwagLabs.TestCases.SwagLabs_PreCondition@5d0a1059</td></tr>
 </table><p>
 </body>
 </html>

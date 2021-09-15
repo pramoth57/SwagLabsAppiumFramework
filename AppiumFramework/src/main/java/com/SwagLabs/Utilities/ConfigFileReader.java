@@ -13,18 +13,23 @@ public class ConfigFileReader {
 	private final String propertyFilePath= System.getProperty("user.dir")+"\\src\\main\\java\\\\resources\\global.properties";
 
 
-	public ConfigFileReader(){
+	public ConfigFileReader()
+	{
 		BufferedReader reader;
-		try {
+		try 
+		{
 			reader = new BufferedReader(new FileReader(propertyFilePath));
 			properties = new Properties();
-			try {
+			try 
+			{
 				properties.load(reader);
 				reader.close();
-			} catch (IOException e) {
+			} catch (IOException e) 
+			{
 				e.printStackTrace();
 			}
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) 
+		{
 			e.printStackTrace();
 			throw new RuntimeException("Configuration.properties not found at " + propertyFilePath);
 		}		
@@ -56,6 +61,19 @@ public class ConfigFileReader {
 			throw new RuntimeException("driverPath not specified in the Configuration.properties file.");
 		}
 	}
+	
+	public String getemulatorType()
+	{
+		String deviceTypePath = properties.getProperty("emulator");
+		if(deviceTypePath!= null) 
+		{	
+			return deviceTypePath;
+		}
+		else 
+		{
+			throw new RuntimeException("driverPath not specified in the Configuration.properties file.");
+		}
+	}
 
 	public String getdevice()
 	{
@@ -70,6 +88,18 @@ public class ConfigFileReader {
 		}
 	}
 	
+	public String get_EmulatorDevice()
+	{
+		String devicePath = properties.getProperty("emulator_Device");
+		if(devicePath!= null) 
+		{	
+			return devicePath;
+		}
+		else 
+		{
+			throw new RuntimeException("driverPath not specified in the Configuration.properties file.");
+		}
+	}
 	
 	public String getFirstName()
 	{

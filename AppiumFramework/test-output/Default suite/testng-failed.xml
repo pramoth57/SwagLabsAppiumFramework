@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="practise.AppiumFramework.SwagLabTest">
+      <class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC">
         <methods>
-          <include name="PostTestCondition"/>
-          <include name="PreCondition"/>
-          <include name="SwagLabs_SanityScenario"/>
-          <include name="PostCondition"/>
-          <include name="PreTestCondition"/>
+          <include name="preTestCondition"/>
+          <include name="postTestCondition"/>
+          <include name="swagLabsTC09"/>
         </methods>
-      </class> <!-- practise.AppiumFramework.SwagLabTest -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_ProblemUser_TC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

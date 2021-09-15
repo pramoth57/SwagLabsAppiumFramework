@@ -2,15 +2,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener class-name="resources.Listeners" />
-		<listener class-name="resources.ExtentReporterNG" />
-
-
+		<!--<listener class-name="resources.Listeners" /> <listener class-name="resources.ExtentReporterNG" 
+			/> -->
 	</listeners>
 
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="practise.AppiumFramework.SwagLabTest" />
+			<class name="com.SwagLabs.TestCases.SwagLabs_PreCondition" />
+			<!-- -->
+			<class name="com.SwagLabs.TestCases.SwagLab_TC01" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC02" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC03" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC04" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC05" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC06" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC07" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC08" />
+			<class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC" />
+			<class name="com.SwagLabs.TestCases.SwagLabs_PostCondition" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

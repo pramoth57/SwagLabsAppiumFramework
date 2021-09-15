@@ -1,10 +1,16 @@
 package com.SwagLabs.Pages;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import java.io.IOException;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+
+import com.SwagLabs.Utilities.Base;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -12,7 +18,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class SwagLabs_CheckoutOverView {
+public class SwagLabs_CheckoutOverView extends Base{
 
 	AndroidDriver<AndroidElement> driver;
 	public SwagLabs_CheckoutOverView(AndroidDriver<AndroidElement> driver)
@@ -35,7 +41,7 @@ public class SwagLabs_CheckoutOverView {
 	
 	
 
-	public void Checkoutoverview_finish()
+	public void checkoutoverview_finish1()
 	{		
 		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"FINISH\"));");
 		finish.click();
@@ -43,41 +49,33 @@ public class SwagLabs_CheckoutOverView {
 
 	}
 
-	public void Checkoutoverview_cancel()
+	public void checkoutoverview_cancel() throws IOException
 	{		
-		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"CANCEL\"));");
-		cancel.click();
+		//elementScrollByText("CANCEL");
+		checkoutOverView_ProductValidation();
+		elementScrollBy_DescriptionAndText("test-CHECKOUT: OVERVIEW", "CANCEL");
+		elementClick(cancel, "Cancel");
+		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"CANCEL\"));");
+		//cancel.click();
 		
 
 	}
 
 	
-	public void Checkoutoverview_amountvalidation()
-	{		
-		double productAmt = getAmount(productPrice.getText());
-		double producttotal = getAmount(driver.findElementByAndroidUIAutomator("new UiSelector().textStartsWith(\"Item total:\");").getText().split(":")[1].trim());
-		//String producttotal =driver.findElementByAndroidUIAutomator("new UiSelector().textStartsWith(\"Item total:\");").getText();
-		//String producttotal = itemTotal.getText();
-		//System.out.println(productAmt==producttotal);
-		assertEquals(true, productAmt==producttotal);
+	public void checkoutoverview_finish() throws InterruptedException, IOException
+	{	
+		//double productAmt= 0.0;
 		
-		
-		
-		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"FINISH\"));");
-		finish.click();
+		checkoutOverView_ProductValidation();
+		//elementScrollByText("FINISH");
+		//test-CHECKOUT: OVERVIEW
+		//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"FINISH\"));");
+		elementScrollByText("FINISH");
+		elementClick(finish, "Finish");
+		//finish.click();
 		
 
 	}
-	public double getAmount(String value)
-
-	{
-
-		value= value.substring(1);
-
-		double amount2value=Double.parseDouble(value);
-
-		return amount2value;
-
-	}
+	
 
 }

@@ -8,11 +8,41 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">38,392</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">11</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">553,808</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">practise.AppiumFramework.SwagLabTest</td><td><a href="#m0">SwagLabs_SanityScenario</a></td><td rowspan="1">1631382379449</td><td rowspan="1">35318</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_ProblemUser_TC</td><td><a href="#m0">swagLabsTC09</a></td><td rowspan="1">1631702268172</td><td rowspan="1">41326</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_ProblemUser_TC</td><td><a href="#m1">swagLabsTC10</a></td><td rowspan="1">1631702312504</td><td rowspan="1">83174</td></tr><tr class="passedodd"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_TC01</td><td><a href="#m2">swagLabsTC01</a></td><td rowspan="1">1631701845411</td><td rowspan="1">74569</td></tr><tr class="passedeven"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_TC02</td><td><a href="#m3">swagLabsTC02</a></td><td rowspan="1">1631701922984</td><td rowspan="1">41955</td></tr><tr class="passedodd"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_TC03</td><td><a href="#m4">swagLabsTC03</a></td><td rowspan="1">1631701967946</td><td rowspan="1">44482</td></tr><tr class="passedeven"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_TC04</td><td><a href="#m5">swagLabsTC04</a></td><td rowspan="1">1631702015432</td><td rowspan="1">45153</td></tr><tr class="passedodd"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_TC05</td><td><a href="#m6">swagLabsTC05</a></td><td rowspan="1">1631702063589</td><td rowspan="1">53781</td></tr><tr class="passedeven"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_TC06</td><td><a href="#m7">swagLabsTC06</a></td><td rowspan="1">1631702120379</td><td rowspan="1">33086</td></tr><tr class="passedodd"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_TC07</td><td><a href="#m8">swagLabsTC07</a></td><td rowspan="1">1631702156472</td><td rowspan="1">45827</td></tr><tr class="passedeven"><td rowspan="1">com.SwagLabs.TestCases.SwagLab_TC08</td><td><a href="#m9">swagLabsTC08</a></td><td rowspan="1">1631702205303</td><td rowspan="1">59864</td></tr><tr class="passedodd"><td rowspan="1">com.SwagLabs.TestCases.SwagLabs_PostCondition</td><td><a href="#m10">SetupExtentReport</a></td><td rowspan="1">1631702395679</td><td rowspan="1">324</td></tr><tr class="passedeven"><td rowspan="1">com.SwagLabs.TestCases.SwagLabs_PreCondition</td><td><a href="#m11">SetupExtentReport</a></td><td rowspan="1">1631701842229</td><td rowspan="1">162</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">practise.AppiumFramework.SwagLabTest#SwagLabs_SanityScenario</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">com.SwagLabs.TestCases.SwagLab_ProblemUser_TC#swagLabsTC09</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1631702309495.png
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMediaFileLocal(LocalMediaStorageHandler.java:77)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMedia(LocalMediaStorageHandler.java:29)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.autoCreateRelativePathMedia(BasicFileReporter.java:260)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(BasicFileReporter.java:243)
+	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
+	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
+	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
+	at com.SwagLabs.Utilities.Base.yourCart_ProductValidation(Base.java:448)
+	at com.SwagLabs.Pages.SwagLabs_YourCartPage.checkout(SwagLabs_YourCartPage.java:44)
+	at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC09(SwagLab_ProblemUser_TC.java:49)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.SwagLabs.TestCases.SwagLab_ProblemUser_TC#swagLabsTC10</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.SwagLabs.TestCases.SwagLab_TC01#swagLabsTC01</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.SwagLabs.TestCases.SwagLab_TC02#swagLabsTC02</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.SwagLabs.TestCases.SwagLab_TC03#swagLabsTC03</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.SwagLabs.TestCases.SwagLab_TC04#swagLabsTC04</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.SwagLabs.TestCases.SwagLab_TC05#swagLabsTC05</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.SwagLabs.TestCases.SwagLab_TC06#swagLabsTC06</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.SwagLabs.TestCases.SwagLab_TC07#swagLabsTC07</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.SwagLabs.TestCases.SwagLab_TC08#swagLabsTC08</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.SwagLabs.TestCases.SwagLabs_PostCondition#SetupExtentReport</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">com.SwagLabs.TestCases.SwagLabs_PreCondition#SetupExtentReport</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

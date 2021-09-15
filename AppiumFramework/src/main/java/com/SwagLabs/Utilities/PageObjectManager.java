@@ -28,7 +28,8 @@ public class PageObjectManager
 	private SwagLabs_ProductPage productPage;
 	
 	private SwagLabs_YourCartPage yourCartPage;
-	
+
+	//Manage Page Object as Singleton Pattern
 	public PageObjectManager(AndroidDriver<AndroidElement> driver)
 	{
 

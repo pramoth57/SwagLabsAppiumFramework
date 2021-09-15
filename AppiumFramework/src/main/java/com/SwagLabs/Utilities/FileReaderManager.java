@@ -9,7 +9,7 @@ public class FileReaderManager {
 	{
 	
 	}
-
+	//Create Singleton Access for reading Properties File
 	public static FileReaderManager getInstance( ) 
 	{
 		return fileReaderManager;

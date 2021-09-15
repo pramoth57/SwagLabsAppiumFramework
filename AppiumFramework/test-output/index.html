@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,8 +39,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+            <a href="#" panel-name="suite-Suite" class="navigator-link">
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\USER\AppData\Local\Temp\testng-eclipse-397050587\testng-customsuite.xml</span>
+                  <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
+                    <span>C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
+                  <a href="#" panel-name="testlist-Suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
+                  <a href="#" panel-name="group-Suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
+                  <a href="#" panel-name="times-Suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
+                  <a href="#" panel-name="reporter-Suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
+                  <a href="#" panel-name="ignored-methods-Suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
+                  <a href="#" panel-name="chronological-Suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -93,21 +93,85 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">12 methods, 1 failed,   11 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC" class="method navigator-link" hash-for-method="swagLabsTC09">swagLabsTC09</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="practise.AppiumFramework.SwagLabTest" class="method navigator-link" hash-for-method="SwagLabs_SanityScenario">SwagLabs_SanityScenario</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLabs_PostCondition" class="method navigator-link" hash-for-method="SetupExtentReport">SetupExtentReport</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLabs_PreCondition" class="method navigator-link" hash-for-method="SetupExtentReport">SetupExtentReport</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_TC01" class="method navigator-link" hash-for-method="swagLabsTC01">swagLabsTC01</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_TC02" class="method navigator-link" hash-for-method="swagLabsTC02">swagLabsTC02</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_TC03" class="method navigator-link" hash-for-method="swagLabsTC03">swagLabsTC03</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_TC04" class="method navigator-link" hash-for-method="swagLabsTC04">swagLabsTC04</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_TC05" class="method navigator-link" hash-for-method="swagLabsTC05">swagLabsTC05</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_TC06" class="method navigator-link" hash-for-method="swagLabsTC06">swagLabsTC06</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_TC07" class="method navigator-link" hash-for-method="swagLabsTC07">swagLabsTC07</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_TC08" class="method navigator-link" hash-for-method="swagLabsTC08">swagLabsTC08</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC" class="method navigator-link" hash-for-method="swagLabsTC10">swagLabsTC10</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,149 +182,516 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+        <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">practise.AppiumFramework.SwagLabTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_ProblemUser_TC</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="SwagLabs_SanityScenario">
-                  </a> <!-- SwagLabs_SanityScenario -->
-                  <span class="method-name">SwagLabs_SanityScenario</span>
+                  <a name="swagLabsTC09">
+                  </a> <!-- swagLabsTC09 -->
+                  <span class="method-name">swagLabsTC09</span>
+                  <div class="stack-trace">java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1631702309495.png
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMediaFileLocal(LocalMediaStorageHandler.java:77)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMedia(LocalMediaStorageHandler.java:29)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.autoCreateRelativePathMedia(BasicFileReporter.java:260)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(BasicFileReporter.java:243)
+	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
+	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
+	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
+	at com.SwagLabs.Utilities.Base.yourCart_ProductValidation(Base.java:448)
+	at com.SwagLabs.Pages.SwagLabs_YourCartPage.checkout(SwagLabs_YourCartPage.java:44)
+	at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC09(SwagLab_ProblemUser_TC.java:49)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
-        </div> <!-- panel Default_suite -->
-        <div panel-name="test-xml-Default_suite" class="panel">
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_ProblemUser_TC</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="swagLabsTC10">
+                  </a> <!-- swagLabsTC10 -->
+                  <span class="method-name">swagLabsTC10</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_TC03</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="swagLabsTC03">
+                  </a> <!-- swagLabsTC03 -->
+                  <span class="method-name">swagLabsTC03</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLabs_PreCondition</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="SetupExtentReport">
+                  </a> <!-- SetupExtentReport -->
+                  <span class="method-name">SetupExtentReport</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_TC08</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="swagLabsTC08">
+                  </a> <!-- swagLabsTC08 -->
+                  <span class="method-name">swagLabsTC08</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_TC02</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="swagLabsTC02">
+                  </a> <!-- swagLabsTC02 -->
+                  <span class="method-name">swagLabsTC02</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_TC05</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="swagLabsTC05">
+                  </a> <!-- swagLabsTC05 -->
+                  <span class="method-name">swagLabsTC05</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_TC07</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="swagLabsTC07">
+                  </a> <!-- swagLabsTC07 -->
+                  <span class="method-name">swagLabsTC07</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_TC04</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="swagLabsTC04">
+                  </a> <!-- swagLabsTC04 -->
+                  <span class="method-name">swagLabsTC04</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLabs_PostCondition</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="SetupExtentReport">
+                  </a> <!-- SetupExtentReport -->
+                  <span class="method-name">SetupExtentReport</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_TC01</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="swagLabsTC01">
+                  </a> <!-- swagLabsTC01 -->
+                  <span class="method-name">swagLabsTC01</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.SwagLabs.TestCases.SwagLab_TC06</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="swagLabsTC06">
+                  </a> <!-- swagLabsTC06 -->
+                  <span class="method-name">swagLabsTC06</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+        </div> <!-- panel Suite -->
+        <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\USER\AppData\Local\Temp\testng-eclipse-397050587\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;practise.AppiumFramework.SwagLabTest&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLabs_PreCondition&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLab_TC01&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLab_TC02&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLab_TC03&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLab_TC04&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLab_TC05&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLab_TC06&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLab_TC07&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLab_TC08&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLab_ProblemUser_TC&quot;/&gt;
+      &lt;class name=&quot;com.SwagLabs.TestCases.SwagLabs_PostCondition&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Default test --&gt;
-&lt;/suite&gt; &lt;!-- Default suite --&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Default_suite" class="panel">
+        <div panel-name="testlist-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Default suite</span>
+            <span class="header-content">Tests for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Default test (1 class)</span>
+                <span class="test-name">Test (11 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Default_suite" class="panel">
+        <div panel-name="group-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Default suite</span>
+            <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Default_suite" class="panel">
+        <div panel-name="times-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Default suite</span>
+            <span class="header-content">Times for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Default_suite');
-function tableData_Default_suite() {
+suiteTableInitFunctions.push('tableData_Suite');
+function tableData_Suite() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(12);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'SwagLabs_SanityScenario')
-data.setCell(0, 2, 'practise.AppiumFramework.SwagLabTest')
-data.setCell(0, 3, 35318);
-window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+data.setCell(0, 1, 'swagLabsTC10')
+data.setCell(0, 2, 'com.SwagLabs.TestCases.SwagLab_ProblemUser_TC')
+data.setCell(0, 3, 83174);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'swagLabsTC01')
+data.setCell(1, 2, 'com.SwagLabs.TestCases.SwagLab_TC01')
+data.setCell(1, 3, 74569);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'swagLabsTC08')
+data.setCell(2, 2, 'com.SwagLabs.TestCases.SwagLab_TC08')
+data.setCell(2, 3, 59864);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'swagLabsTC05')
+data.setCell(3, 2, 'com.SwagLabs.TestCases.SwagLab_TC05')
+data.setCell(3, 3, 53781);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'swagLabsTC07')
+data.setCell(4, 2, 'com.SwagLabs.TestCases.SwagLab_TC07')
+data.setCell(4, 3, 45827);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'swagLabsTC04')
+data.setCell(5, 2, 'com.SwagLabs.TestCases.SwagLab_TC04')
+data.setCell(5, 3, 45153);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'swagLabsTC03')
+data.setCell(6, 2, 'com.SwagLabs.TestCases.SwagLab_TC03')
+data.setCell(6, 3, 44482);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'swagLabsTC02')
+data.setCell(7, 2, 'com.SwagLabs.TestCases.SwagLab_TC02')
+data.setCell(7, 3, 41955);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'swagLabsTC09')
+data.setCell(8, 2, 'com.SwagLabs.TestCases.SwagLab_ProblemUser_TC')
+data.setCell(8, 3, 41326);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'swagLabsTC06')
+data.setCell(9, 2, 'com.SwagLabs.TestCases.SwagLab_TC06')
+data.setCell(9, 3, 33086);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'SetupExtentReport')
+data.setCell(10, 2, 'com.SwagLabs.TestCases.SwagLabs_PostCondition')
+data.setCell(10, 3, 324);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'SetupExtentReport')
+data.setCell(11, 2, 'com.SwagLabs.TestCases.SwagLabs_PreCondition')
+data.setCell(11, 3, 162);
+window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 35 seconds</span>
-              <div id="times-div-Default_suite">
-              </div> <!-- times-div-Default_suite -->
+              <span class="suite-total-time">Total running time: 8 minutes</span>
+              <div id="times-div-Suite">
+              </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Default_suite" class="panel">
+        <div panel-name="reporter-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Default suite</span>
+            <span class="header-content">Reporter output for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Default_suite" class="panel">
+        <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">7 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">practise.AppiumFramework.SwagLabTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">SwagLabs_AddProduct_Checkout_FinalCancel</span>
-                <br/>
-                <span class="ignored-method-name">SwagLabs_AddProduct_Checkout_Cancel</span>
-                <br/>
-                <span class="ignored-method-name">SwagLabs_MultipleProductCheckout</span>
-                <br/>
-                <span class="ignored-method-name">SwagLabs_AddProduct_Checkout_AmountValidation</span>
-                <br/>
-                <span class="ignored-method-name">SwagLabs_AddProduct_Remove_Checkout</span>
-                <br/>
-                <span class="ignored-method-name">SwagLabs_AddProduct_ContinueShopping_Checkout</span>
-                <br/>
-                <span class="ignored-method-name">SwagLabs_MultipleProductAdd_RemoveAll_Checkout</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Default_suite" class="panel">
+        <div panel-name="chronological-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">practise.AppiumFramework.SwagLabTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">PreCondition</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLabs_PreCondition</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">SwagLabs_SanityScenario</span>
-                <span class="method-start">3074 ms</span>
+                <span class="method-name">SetupExtentReport</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC01</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">PreTestCondition</span>
-                <span class="method-start">3074 ms</span>
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">168 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">swagLabsTC01</span>
+                <span class="method-start">3182 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">PostTestCondition</span>
-                <span class="method-start">38392 ms</span>
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">77752 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-test after">
-                <span class="method-name">PostCondition</span>
-                <span class="method-start">38392 ms</span>
-              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC02</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">77753 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">swagLabsTC02</span>
+                <span class="method-start">80755 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">122711 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC03</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">122712 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">swagLabsTC03</span>
+                <span class="method-start">125717 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">170200 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC04</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">170201 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">swagLabsTC04</span>
+                <span class="method-start">173203 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">218357 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC05</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">218358 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">swagLabsTC05</span>
+                <span class="method-start">221360 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">275142 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC06</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">275144 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">swagLabsTC06</span>
+                <span class="method-start">278150 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC07</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">311237 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC06</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">311237 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC07</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">swagLabsTC07</span>
+                <span class="method-start">314243 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">360071 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_TC08</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">360072 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">swagLabsTC08</span>
+                <span class="method-start">363074 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">422939 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLab_ProblemUser_TC</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">422940 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">swagLabsTC09</span>
+                <span class="method-start">425943 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">467272 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">preTestCondition</span>
+                <span class="method-start">467273 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">swagLabsTC10</span>
+                <span class="method-start">470275 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">postTestCondition</span>
+                <span class="method-start">553450 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.SwagLabs.TestCases.SwagLabs_PostCondition</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">SetupExtentReport</span>
+                <span class="method-start">553450 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
