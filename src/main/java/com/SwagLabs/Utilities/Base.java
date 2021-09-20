@@ -4,17 +4,25 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.ServerSocket;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -55,6 +63,7 @@ public class Base
 		htmlreporter.config().setDocumentTitle("SwagLabs Automation Reports");
 		htmlreporter.config().setReportName("Swaglabs Automtion Execution reports");
 		htmlreporter.config().setTheme(Theme.STANDARD);
+		htmlreporter.config().setCSS(".r-img { width: 15%; height: auto; }");
 		htmlreporter.config().setAutoCreateRelativePathMedia(true);
 
 		reports = new ExtentReports();
@@ -184,14 +193,14 @@ public class Base
 			capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);
 
 			/*DesiredCapabilities caps = new DesiredCapabilities();
-		caps.setCapability("browserstack.user", "mooorthiadvocate_m6qFen");
-		caps.setCapability("browserstack.key", "wbr8sabPGdxCYSYytf5f");
-		caps.setCapability("app", "bs://29802c7b7cdcc8e367ecb01b9ceaa181c7545788");
-		caps.setCapability("device", "Google Pixel 3");
-		caps.setCapability("os_version", "9.0");
-		caps.setCapability("project", "First Java Project");
-		caps.setCapability("build", "Java Android");
-		caps.setCapability("name", "first_test");*/
+			caps.setCapability("browserstack.user", "mooorthiadvocate_m6qFen");
+			caps.setCapability("browserstack.key", "wbr8sabPGdxCYSYytf5f");
+			caps.setCapability("app", "bs://29802c7b7cdcc8e367ecb01b9ceaa181c7545788");
+			caps.setCapability("device", "Google Pixel 3");
+			caps.setCapability("os_version", "9.0");
+			caps.setCapability("project", "First Java Project");
+			caps.setCapability("build", "Java Android");
+			caps.setCapability("name", "first_test");*/
 
 
 			try 
@@ -199,6 +208,7 @@ public class Base
 				//driver = new AndroidDriver<MobileElement>(new URL("http://hub.browserstack.com/wd/hub"), caps);
 
 				driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+				//System.out.println(getLogCat_logss(driver.manage().logs().get("logcat")));		
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				extentTest.log(Status.PASS, "Android Driver Started Successfully");
 
@@ -206,7 +216,7 @@ public class Base
 			catch (Exception e) 
 			{
 				// TODO: handle exception
-				extentTest.log(Status.FAIL, "Android Drive not Started Successfully");
+				extentTest.log(Status.FAIL, "Android Drive not Started Successfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
 
 			}
 		}
@@ -219,11 +229,11 @@ public class Base
 			capabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir")+"\\resources\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");		
 			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");				
 			capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);
-			
+
 			try 
 			{
 				//driver = new AndroidDriver<MobileElement>(new URL("http://hub.browserstack.com/wd/hub"), caps);
-				
+
 				driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				extentTest.log(Status.PASS, "IOS Driver Started Successfully");
@@ -241,6 +251,32 @@ public class Base
 	}
 
 
+	public static String getLogCat_logss(LogEntries logs)
+	{
+		String log = "";
+		//logs = driver.manage().logs().get("logcat");
+		//System.out.println("First and last ten lines of log: ");
+		// StreamSupport.stream(logs.spliterator(), false).limit(10).forEach(System.out::println);
+		//System.out.println("...");
+		//StreamSupport.stream(logs.spliterator(), false).skip(logs.getAll().size() - 10).forEach(System.out::println);
+		//List<LogEntries> lst=StreamSupport.stream(logs.spliterator(), false).skip(logs.getAll().size() - 10).collect(Collectors.toList());
+		for(LogEntry logEntry: StreamSupport.stream(logs.spliterator(), false).skip(logs.getAll().size() - 5).collect(Collectors.toList()))
+		{
+			//System.out.println(l.toString());
+			if(log.equals(""))
+			{
+				log = logEntry.toString();		        	
+			}
+			else
+			{	
+				log = log+"\n"+logEntry.toString();
+			}
+
+		}
+		//System.out.println("**********************");
+		//System.out.println(log);
+		return log;
+	}
 
 	//Capture Screen Shot
 	public static String getScreenshot() throws IOException
@@ -261,7 +297,7 @@ public class Base
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, oText+" Text Scrolled Not Into View Successfully",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			extentTest.log(Status.FAIL, oText+" Text Scrolled Not Into View Successfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
@@ -292,7 +328,7 @@ public class Base
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, oText+" Text Scrolled Not Into View Successfully",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			extentTest.log(Status.FAIL, oText+" Text Scrolled Not Into View Successfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
@@ -307,12 +343,12 @@ public class Base
 			}
 			else
 			{
-				extentTest.log(Status.PASS, oElementName+" Page Is Visible");
+				extentTest.log(Status.PASS, oElementName+" Page not Is Visible"+getLogCat_logss(driver.manage().logs().get("logcat")));
 			}
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.PASS, oElementName+" Page Is Visible",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			extentTest.log(Status.FAIL, oElementName+" Page Is not Visible"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
@@ -327,7 +363,7 @@ public class Base
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, oElementName+" Click Unsuccessfully",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			extentTest.log(Status.FAIL, oElementName+" Click Unsuccessfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
@@ -342,7 +378,7 @@ public class Base
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, "Data *"+oData+"* Not Entered Successfully for "+oElementName+" Field",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			extentTest.log(Status.FAIL, "Data *"+oData+"* Not Entered Successfully for "+oElementName+" Field \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
@@ -373,7 +409,7 @@ public class Base
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, "Unable to Add "+productname+" Product To Cart ",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			extentTest.log(Status.FAIL, "Unable to Add "+productname+" Product To Cart \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 			//assertTrue(false);
 		}
 	}
@@ -408,7 +444,7 @@ public class Base
 				}
 				else 
 				{
-					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
+					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
 
 				}
 
@@ -421,7 +457,7 @@ public class Base
 				}
 				else 
 				{
-					extentTest.log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
+					extentTest.log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
 				}
 
 				driver.findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
@@ -466,7 +502,7 @@ public class Base
 				}
 				else 
 				{
-					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
+					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
 
 				}
 
@@ -479,7 +515,7 @@ public class Base
 				}
 				else 
 				{
-					extentTest.log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
+					extentTest.log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
 				}
 				driver.findElement(By.xpath("//*[@text='ADD TO CART']")).click();
 				driver.findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
@@ -513,7 +549,7 @@ public class Base
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, "Added Product "+productName+" is not available in YourCart",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			extentTest.log(Status.FAIL, "Added Product "+productName+" is not available in YourCart \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
@@ -541,7 +577,7 @@ public class Base
 
 			if(producttotal==0)
 			{
-				extentTest.log(Status.FAIL, "Cart Total amount is **$0.00**",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+				extentTest.log(Status.FAIL, "Cart Total amount is **$0.00**  \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 				//extentTest.log(Status.FAIL, "Added Product is not available in Checkout Overview", MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 				assertTrue(false);
 			}
@@ -553,7 +589,7 @@ public class Base
 				}
 				else
 				{
-					extentTest.log(Status.FAIL, "Cart Total "+productAmt+" and Item Total "+producttotal+" are Not Equal",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+					extentTest.log(Status.FAIL, "Cart Total "+productAmt+" and Item Total "+producttotal+" are Not Equal \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 
 				}
 				assertEquals(true, productAmt==producttotal);
@@ -582,7 +618,7 @@ public class Base
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, productName+" not removed from cart",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			extentTest.log(Status.FAIL, productName+" not removed from cart \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
