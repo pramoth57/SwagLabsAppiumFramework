@@ -17,7 +17,7 @@
 			<class name="com.SwagLabs.TestCases.SwagLab_TC06" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC07" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC08" />
-			<class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC" /><!---->
+			<class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC" />
 			<class name="com.SwagLabs.TestCases.SwagLabs_PostCondition" />
 		</classes>
 	</test> <!-- Test -->
