@@ -10,19 +10,19 @@
 		<classes>
 			<class name="com.SwagLabs.TestCases.SwagLabs_PreCondition" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC01" />
-	<!--		<class name="com.SwagLabs.TestCases.SwagLab_TC02" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC02" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC03" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC04" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC05" /> -->
+			<class name="com.SwagLabs.TestCases.SwagLab_TC05" />
 			<class name="com.SwagLabs.TestCases.SwagLabs_PostCondition" />
 		</classes>
 	</test>
 	<test thread-count="5" name="Android Device Test">
 		<classes>
 			<class name="com.SwagLabs.TestCases.SwagLabs_PreCondition" />
-			<!--<class name="com.SwagLabs.TestCases.SwagLab_TC06" />
-				<class name="com.SwagLabs.TestCases.SwagLab_TC07" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC08" />-->
+			<class name="com.SwagLabs.TestCases.SwagLab_TC06" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC07" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC08" />
 			<class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC" />
 			<class name="com.SwagLabs.TestCases.SwagLabs_PostCondition" />
 		</classes>
