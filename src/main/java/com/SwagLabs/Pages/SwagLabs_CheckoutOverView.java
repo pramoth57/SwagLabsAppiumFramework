@@ -52,7 +52,7 @@ public class SwagLabs_CheckoutOverView extends Base{
 
 	public void checkoutoverview_cancel() throws IOException
 	{		
-		
+		elementVisibility("CHECKOUT: OVERVIEW");
 		checkoutOverView_ProductValidation();
 		elementScrollBy_DescriptionAndText("test-CHECKOUT: OVERVIEW", "CANCEL");
 		elementClick(cancel, "Cancel");
@@ -62,6 +62,7 @@ public class SwagLabs_CheckoutOverView extends Base{
 	
 	public void checkoutoverview_finish() throws InterruptedException, IOException
 	{	
+		elementVisibility("CHECKOUT: OVERVIEW");
 		checkoutOverView_ProductValidation();	
 		elementScrollByText("FINISH");
 		elementClick(finish, "Finish");

@@ -32,6 +32,7 @@ public class SwagLabs_CheckoutComplete extends Base{
 
 	public void checkoutComplete() throws IOException
 	{	
+		elementVisibility("CHECKOUT: COMPLETE!");
 		elementClick(backHome_btn, "Back Home");	
 
 	}

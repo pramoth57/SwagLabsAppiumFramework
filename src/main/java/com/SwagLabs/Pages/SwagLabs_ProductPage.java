@@ -54,7 +54,7 @@ public class SwagLabs_ProductPage extends Base{
 
 	public void addProductToCart(String productList) throws InterruptedException, IOException
 	{		
-		
+		elementVisibility("PRODUCTS");
 		addProduct(productList);
 		elementClick(viewCart, " View Cart");
 	}

@@ -43,15 +43,18 @@ public class SwagLabs_YourCartPage extends Base {
 
 
 	public void checkout() throws InterruptedException, IOException
-	{	yourCart_ProductValidation();	
-	elementScrollBy_DescriptionAndText("test-Cart Content","CHECKOUT");
-	elementClick(checkout, "Check out");	
+	{	
+		elementVisibility("YOUR CART");
+		yourCart_ProductValidation();	
+		elementScrollBy_DescriptionAndText("test-Cart Content","CHECKOUT");
+		elementClick(checkout, "Check out");	
 
 
 	}
 
 	public void click_Continue() throws IOException
-	{		
+	{	
+		elementVisibility("YOUR CART");
 		elementScrollByText("CONTINUE SHOPPING");
 		elementClick(continueShooping_btn, "Continue Shopping");
 
@@ -59,6 +62,7 @@ public class SwagLabs_YourCartPage extends Base {
 
 	public void removeAll_Checkout() throws InterruptedException, IOException
 	{		
+		elementVisibility("YOUR CART");
 
 		while(elementDispayed("REMOVE"))	
 		{
@@ -80,12 +84,12 @@ public class SwagLabs_YourCartPage extends Base {
 	public void remove_Checkout(String productName) throws InterruptedException, IOException
 	{		
 
-
+		elementVisibility("YOUR CART");
 		Thread.sleep(2000);
 		removeProduct_YourCart(productName);
 		elementScrollByText("CHECKOUT");
 		elementClick(checkout, "CHECKOUT");
-		
+
 	}
 
 

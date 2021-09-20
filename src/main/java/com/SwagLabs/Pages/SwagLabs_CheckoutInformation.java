@@ -47,7 +47,7 @@ public class SwagLabs_CheckoutInformation extends Base {
 
 	public void checkout() throws IOException
 	{		
-		
+		elementVisibility("CHECKOUT: INFORMATION");
 		elementSendKeys(firstName, "First Name", FileReaderManager.getInstance().getConfigReader().getFirstName());
 		elementSendKeys(lasttName, "Last Name", FileReaderManager.getInstance().getConfigReader().getLastName());
 		elementSendKeys(postalCode, "PostalCode", FileReaderManager.getInstance().getConfigReader().getPincode());
@@ -56,7 +56,8 @@ public class SwagLabs_CheckoutInformation extends Base {
 	}
 	
 	public void cancel() throws IOException
-	{		
+	{	
+		elementVisibility("CHECKOUT: INFORMATION");
 		elementSendKeys(firstName, "First Name", FileReaderManager.getInstance().getConfigReader().getFirstName());
 		elementSendKeys(lasttName, "Last Name", FileReaderManager.getInstance().getConfigReader().getLastName());
 		elementSendKeys(postalCode, "PostalCode", FileReaderManager.getInstance().getConfigReader().getPincode());

@@ -252,6 +252,26 @@ public class Base
 		}
 	}
 
+	public static void elementVisibility(String oElementName) throws IOException
+	{
+		try
+		{
+			boolean status = driver.findElement(MobileBy.xpath("//*[@text='"+oElementName+"']")).isDisplayed();
+			if(status)
+			{	
+				extentTest.log(Status.PASS, oElementName+" Page Is Visible");
+			}
+			else
+			{
+				extentTest.log(Status.PASS, oElementName+" Page Is Visible");
+			}
+		}
+		catch (Exception e) 
+		{
+			extentTest.log(Status.PASS, oElementName+" Page Is Visible",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+		}
+	}
+	
 	//Perform Click Action on WebElement
 	public static void elementClick(WebElement oElement, String oElementName) throws IOException
 	{
@@ -294,7 +314,8 @@ public class Base
 			for(String product: oProductList.split(","))
 			{	
 				System.out.println(product);
-				driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-PRODUCTS\")).scrollIntoView(text(\""+product+"\"));");
+				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-PRODUCTS\")).scrollIntoView(text(\""+product+"\"));");
+				elementScrollBy_DescriptionAndText("test-PRODUCTS", product);
 				extentTest.log(Status.PASS, product+" Scrolled into View");
 				productname = product;
 				productAmount = driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@content-desc='test-Price']")).getAttribute("text");
@@ -328,7 +349,8 @@ public class Base
 			for(String product: oProductList.split(","))
 			{	
 				System.out.println(product);
-				driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-PRODUCTS\")).scrollIntoView(text(\""+product+"\"));");
+				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-PRODUCTS\")).scrollIntoView(text(\""+product+"\"));");
+				elementScrollBy_DescriptionAndText("test-PRODUCTS", product);
 				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+product+"\"));");
 				extentTest.log(Status.PASS, product+" Scrolled into View");
 				productname = product;
@@ -348,7 +370,8 @@ public class Base
 					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
 					//extentTest.log(Status.FAIL, "Added Product "+product+" is not available in YourCart",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 				}
-				driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Inventory item page\")).scrollIntoView(text(\"ADD TO CART\"));");
+				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Inventory item page\")).scrollIntoView(text(\"ADD TO CART\"));");
+				elementScrollBy_DescriptionAndText("test-Inventory item page", "ADD TO CART");
 				//extentTest.log(Status.PASS, "Unable to Add "+productname+" Product To Cart ",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());				
 				inventoryproductAmount=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
 				
@@ -391,7 +414,8 @@ public class Base
 			for(String product: oProductList.split(","))
 			{	
 				System.out.println(product);
-				driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-PRODUCTS\")).scrollIntoView(text(\""+product+"\"));");
+				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-PRODUCTS\")).scrollIntoView(text(\""+product+"\"));");
+				elementScrollBy_DescriptionAndText("test-PRODUCTS", product);
 				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+product+"\"));");
 				extentTest.log(Status.PASS, product+" Scrolled into View");
 				productname = product;
@@ -411,7 +435,8 @@ public class Base
 					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
 					//extentTest.log(Status.FAIL, "Added Product "+product+" is not available in YourCart",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 				}
-				driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Inventory item page\")).scrollIntoView(text(\"ADD TO CART\"));");
+				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Inventory item page\")).scrollIntoView(text(\"ADD TO CART\"));");
+				elementScrollBy_DescriptionAndText("test-Inventory item page", "ADD TO CART");
 				//extentTest.log(Status.PASS, "Unable to Add "+productname+" Product To Cart ",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());				
 				inventoryproductAmount=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
 				
@@ -477,13 +502,15 @@ public class Base
 			for(Map.Entry m : Base.productDetails.entrySet())
 			{ 
 
-				driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(text(\""+m.getKey().toString()+"\"));");
+				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(text(\""+m.getKey().toString()+"\"));");
+				elementScrollBy_DescriptionAndText("test-CHECKOUT: OVERVIEW", m.getKey().toString());
 				extentTest.log(Status.PASS, m.getKey().toString()+"Added Product is available");
 				assertTrue(driver.findElement(MobileBy.xpath("//*[@text='"+m.getKey().toString()+"']/../..//*[@text='"+m.getValue().toString()+"']")).isDisplayed());			
 				productAmt = productAmt + getAmount(m.getValue().toString());
 			} 		
 
-			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(textStartsWith(\"Item total:\"));");		
+			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(textStartsWith(\"Item total:\"));");	
+			//elementScrollBy_DescriptionAndText("test-CHECKOUT: OVERVIEW", "ADD TO CART");
 			double producttotal = getAmount(driver.findElementByAndroidUIAutomator("new UiSelector().textStartsWith(\"Item total:\");").getText().split(":")[1].trim());
 
 			if(producttotal==0)
@@ -506,8 +533,8 @@ public class Base
 				assertEquals(true, productAmt==producttotal);
 			}
 			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(text(\"FINISH\"));");
-			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"FINISH\"));");
-
+			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"FINISH\"));");
+			elementScrollByText("FINISH");
 
 		}
 		catch (Exception e) 
@@ -526,7 +553,8 @@ public class Base
 		try
 		{
 
-			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Cart Content\")).scrollIntoView(text(\""+productName+"\"));");
+			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Cart Content\")).scrollIntoView(text(\""+productName+"\"));");
+			elementScrollBy_DescriptionAndText("test-Cart Content", productName);
 			driver.findElement(MobileBy.xpath("//*[@text='"+productName+"']/../..//*[@text='REMOVE']")).click();
 
 			Base.productDetails.remove(productName);
