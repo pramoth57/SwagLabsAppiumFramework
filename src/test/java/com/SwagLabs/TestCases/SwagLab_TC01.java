@@ -30,7 +30,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class SwagLab_TC01 extends Base{
-	AndroidDriver<MobileElement> driver;
+	AppiumDriver<MobileElement> driver;
 	PageObjectManager pageObjectManager;
 
 	@BeforeMethod

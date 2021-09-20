@@ -13,6 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.SwagLabs.Utilities.Base;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -22,8 +23,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class SwagLabs_YourCartPage extends Base {
 
-	AndroidDriver<MobileElement> driver;
-	public SwagLabs_YourCartPage(AndroidDriver<MobileElement> driver)
+	AppiumDriver<MobileElement> driver;
+	public SwagLabs_YourCartPage(AppiumDriver<MobileElement> driver)
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 		this.driver=driver;

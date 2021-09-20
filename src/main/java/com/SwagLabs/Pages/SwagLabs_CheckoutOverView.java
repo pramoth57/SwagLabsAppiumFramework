@@ -13,6 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.SwagLabs.Utilities.Base;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.FindsByAndroidUIAutomator;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -23,8 +24,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class SwagLabs_CheckoutOverView extends Base{
 
-	AndroidDriver<MobileElement> driver;
-	public SwagLabs_CheckoutOverView(AndroidDriver<MobileElement> driver)
+	AppiumDriver<MobileElement> driver;
+	public SwagLabs_CheckoutOverView(AppiumDriver<MobileElement> driver)
 	{
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 		this.driver=driver;
@@ -46,8 +47,8 @@ public class SwagLabs_CheckoutOverView extends Base{
 
 	public void checkoutoverview_finish1()
 	{		
-		driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"FINISH\"));");
-		finish.click();
+		//((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"FINISH\"));");
+		//finish.click();
 	}
 
 	public void checkoutoverview_cancel() throws IOException

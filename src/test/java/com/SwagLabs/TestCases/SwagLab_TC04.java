@@ -24,12 +24,13 @@ import com.SwagLabs.Utilities.FileReaderManager;
 import com.SwagLabs.Utilities.PageObjectManager;
 import com.aventstack.extentreports.ExtentTest;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class SwagLab_TC04 extends Base{
-	AndroidDriver<MobileElement> driver;
+	AppiumDriver<MobileElement> driver;
 	PageObjectManager pageObjectManager;
 
 	@BeforeMethod

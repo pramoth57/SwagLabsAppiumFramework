@@ -17,7 +17,7 @@ import io.appium.java_client.android.AndroidElement;
 public class PageObjectManager 
 {
 
-	private AndroidDriver<MobileElement> driver;
+	private AppiumDriver<MobileElement> driver;
 
 	private SwagLabs_CheckoutComplete checkoutComplete;
 
@@ -32,7 +32,7 @@ public class PageObjectManager
 	private SwagLabs_YourCartPage yourCartPage;
 
 	//Manage Page Object as Singleton Pattern
-	public PageObjectManager(AndroidDriver<MobileElement> driver)
+	public PageObjectManager(AppiumDriver<MobileElement> driver)
 	{
 
 		this.driver = driver;

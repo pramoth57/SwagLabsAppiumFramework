@@ -24,6 +24,8 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.FindsByAndroidUIAutomator;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -35,7 +37,7 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 public class Base
 {
 	public static AppiumDriverLocalService appium_Service;
-	public static AndroidDriver<MobileElement>  driver;
+	public static AppiumDriver<MobileElement>  driver;
 	public static ExtentTest extentTest;
 	public static HashMap<String, String> productDetails = new HashMap<String, String>();
 	public static ExtentHtmlReporter htmlreporter;
@@ -131,7 +133,7 @@ public class Base
 		Thread.sleep(6000);
 	}*/
 	//Initiate Android Driver with corresponding Capabilities
-	public static  AndroidDriver<MobileElement> capabilities(String appName) throws IOException, InterruptedException
+	public static  AppiumDriver<MobileElement> capabilities(String appName) throws IOException, InterruptedException
 	{
 
 		//String driverDevice = driverDevice;
@@ -212,7 +214,7 @@ public class Base
 	{
 		try
 		{
-			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+oText+"\"));");
+			((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+oText+"\"));");
 			extentTest.log(Status.PASS, oText+" Text Scrolled Into View Successfully");
 		}
 		catch (Exception e) 
@@ -243,7 +245,7 @@ public class Base
 	{
 		try
 		{
-			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\""+oDescription+"\")).scrollIntoView(text(\""+oText+"\"));");
+			((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\""+oDescription+"\")).scrollIntoView(text(\""+oText+"\"));");
 			extentTest.log(Status.PASS, oText+" Text Scrolled Into View Successfully");
 		}
 		catch (Exception e) 
@@ -509,9 +511,9 @@ public class Base
 				productAmt = productAmt + getAmount(m.getValue().toString());
 			} 		
 
-			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(textStartsWith(\"Item total:\"));");	
+			((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(textStartsWith(\"Item total:\"));");	
 			//elementScrollBy_DescriptionAndText("test-CHECKOUT: OVERVIEW", "ADD TO CART");
-			double producttotal = getAmount(driver.findElementByAndroidUIAutomator("new UiSelector().textStartsWith(\"Item total:\");").getText().split(":")[1].trim());
+			double producttotal = getAmount(((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiSelector().textStartsWith(\"Item total:\");").getText().split(":")[1].trim());
 
 			if(producttotal==0)
 			{
