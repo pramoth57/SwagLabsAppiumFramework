@@ -37,14 +37,15 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 public class Base
 {
 	public static AppiumDriverLocalService appium_Service;
-	public static AppiumDriver<MobileElement>  driver;
+	//public static AppiumDriver<MobileElement>  driver;
+	public static  AppiumDriver<MobileElement> driver;
 	public static ExtentTest extentTest;
 	public static HashMap<String, String> productDetails = new HashMap<String, String>();
 	public static ExtentHtmlReporter htmlreporter;
 	public static ExtentReports reports;
 
-	
-	
+
+
 	//Initiate Extent Report instance
 	public static void intitate_extentReport()
 	{
@@ -54,7 +55,7 @@ public class Base
 		htmlreporter.config().setReportName("Swaglabs Automtion Execution reports");
 		htmlreporter.config().setTheme(Theme.STANDARD);
 		htmlreporter.config().setAutoCreateRelativePathMedia(true);
-		
+
 		reports = new ExtentReports();
 		reports.setSystemInfo("Device Type", "Android");
 		reports.setSystemInfo("Device", "Android Device");
@@ -143,7 +144,7 @@ public class Base
 		File appDir = new File("resource");
 		File app = new File(appDir, FileReaderManager.getInstance().getConfigReader().getswagLagsappApp());
 
-		
+
 
 		if(driverDevice.equals("Android"))
 		{
@@ -170,19 +171,30 @@ public class Base
 			}
 		}
 		System.out.println();
+		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
 		capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.swaglabsmobileapp");
 		capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.swaglabsmobileapp.MainActivity");
 		capabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir")+"\\resources\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");		
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");				
-		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);	
+		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);
 		
+		/*DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setCapability("browserstack.user", "mooorthiadvocate_m6qFen");
+		caps.setCapability("browserstack.key", "wbr8sabPGdxCYSYytf5f");
+		caps.setCapability("app", "bs://29802c7b7cdcc8e367ecb01b9ceaa181c7545788");
+		caps.setCapability("device", "Google Pixel 3");
+		caps.setCapability("os_version", "9.0");
+		caps.setCapability("project", "First Java Project");
+		caps.setCapability("build", "Java Android");
+		caps.setCapability("name", "first_test");*/
+
 
 		try 
 		{
+			//driver = new AndroidDriver<MobileElement>(new URL("http://hub.browserstack.com/wd/hub"), caps);
 			
-			//driver = new  AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			extentTest.log(Status.PASS, "Android Driver Started Successfully");
@@ -192,13 +204,13 @@ public class Base
 		{
 			// TODO: handle exception
 			extentTest.log(Status.FAIL, "Android Drive not Started Successfully");
-			
+
 		}
 
 		return driver;
 	}
-	
-	
+
+
 
 	//Capture Screen Shot
 	public static String getScreenshot() throws IOException
@@ -273,7 +285,7 @@ public class Base
 			extentTest.log(Status.PASS, oElementName+" Page Is Visible",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
-	
+
 	//Perform Click Action on WebElement
 	public static void elementClick(WebElement oElement, String oElementName) throws IOException
 	{
@@ -309,7 +321,7 @@ public class Base
 	{
 		String productAmount = null;
 		String productname = null;
-		
+
 		try
 		{
 
@@ -335,62 +347,55 @@ public class Base
 			//assertTrue(false);
 		}
 	}
-	
+
 	//Validate Product informaion in Your and Invertory Page
 	public static void validateProductInfo(String oProductList) throws IOException
 	{
 		String productAmount = null;
 		String productname = null;
-		
+
 		String inventoryproductAmount = null;
 		String inventoryproductname = null;
-		
+
 		try
 		{
 
 			for(String product: oProductList.split(","))
 			{	
 				System.out.println(product);
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-PRODUCTS\")).scrollIntoView(text(\""+product+"\"));");
 				elementScrollBy_DescriptionAndText("test-PRODUCTS", product);
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+product+"\"));");
 				extentTest.log(Status.PASS, product+" Scrolled into View");
 				productname = product;
 				productAmount = driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@content-desc='test-Price']")).getAttribute("text");
 				extentTest.log(Status.PASS, product+" Amount "+productAmount+" retrived Successfully");
 				Base.productDetails.put(product, productAmount);							
 				driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']")).click();
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Inventory item page\")).scrollIntoView(text(\""+product+"\"));");
 				inventoryproductname=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Description']/android.widget.TextView")).getAttribute("text");
 				if(productname.equals(inventoryproductname))
 				{
 					extentTest.log(Status.PASS, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
-					
+
 				}
 				else 
 				{
 					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
-					//extentTest.log(Status.FAIL, "Added Product "+product+" is not available in YourCart",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+					
 				}
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Inventory item page\")).scrollIntoView(text(\"ADD TO CART\"));");
-				elementScrollBy_DescriptionAndText("test-Inventory item page", "ADD TO CART");
-				//extentTest.log(Status.PASS, "Unable to Add "+productname+" Product To Cart ",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());				
+				
+				elementScrollBy_DescriptionAndText("test-Inventory item page", "ADD TO CART");							
 				inventoryproductAmount=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
-				
-				
-				
 				if(productAmount.equals(inventoryproductAmount))
 				{
 					extentTest.log(Status.PASS, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
-					
+
 				}
 				else 
 				{
 					extentTest.log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
 				}
-				//extentTest.log(Status.PASS, product+" Added to Cart Successfully");
-				driver.findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
 				
+				driver.findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
+
 
 			}
 		}
@@ -406,57 +411,49 @@ public class Base
 	{
 		String productAmount = null;
 		String productname = null;
-		
+
 		String inventoryproductAmount = null;
 		String inventoryproductname = null;
-		
+
 		try
 		{
 
 			for(String product: oProductList.split(","))
 			{	
 				System.out.println(product);
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-PRODUCTS\")).scrollIntoView(text(\""+product+"\"));");
 				elementScrollBy_DescriptionAndText("test-PRODUCTS", product);
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+product+"\"));");
 				extentTest.log(Status.PASS, product+" Scrolled into View");
 				productname = product;
 				productAmount = driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@content-desc='test-Price']")).getAttribute("text");
 				extentTest.log(Status.PASS, product+" Amount "+productAmount+" retrived Successfully");
 				Base.productDetails.put(product, productAmount);							
 				driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']")).click();
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Inventory item page\")).scrollIntoView(text(\""+product+"\"));");
 				inventoryproductname=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Description']/android.widget.TextView")).getAttribute("text");
 				if(productname.equals(inventoryproductname))
 				{
 					extentTest.log(Status.PASS, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
-					
+
 				}
 				else 
 				{
 					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
-					//extentTest.log(Status.FAIL, "Added Product "+product+" is not available in YourCart",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+					
 				}
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Inventory item page\")).scrollIntoView(text(\"ADD TO CART\"));");
+				
 				elementScrollBy_DescriptionAndText("test-Inventory item page", "ADD TO CART");
-				//extentTest.log(Status.PASS, "Unable to Add "+productname+" Product To Cart ",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());				
 				inventoryproductAmount=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
-				
-				
-				
 				if(productAmount.equals(inventoryproductAmount))
 				{
 					extentTest.log(Status.PASS, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
-					
+
 				}
 				else 
 				{
 					extentTest.log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
 				}
 				driver.findElement(By.xpath("//*[@text='ADD TO CART']")).click();
-				//extentTest.log(Status.PASS, product+" Added to Cart Successfully");
 				driver.findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
-				
+
 
 			}
 		}
@@ -467,7 +464,7 @@ public class Base
 		}
 	}
 
-	
+
 	//Verify Product Added from Product Home Page is Visible in Your Cart Page
 	public static void yourCart_ProductValidation() throws IOException
 	{
@@ -480,11 +477,8 @@ public class Base
 				productName=m.getKey().toString();
 				Thread.sleep(2000);
 				elementScrollBy_DescriptionAndText("test-Cart Content", productName);
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"\")).scrollIntoView(text(\""+m.getKey().toString()+"\"));");
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+m.getKey().toString()+"\"));");
 				extentTest.log(Status.PASS, m.getKey().toString()+"Added Product is available");
-				//assertTrue(driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+m.getKey().toString()+"']")).isDisplayed());	
-
+				
 			} 
 		}
 		catch (Exception e) 
@@ -504,7 +498,7 @@ public class Base
 			for(Map.Entry m : Base.productDetails.entrySet())
 			{ 
 
-				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(text(\""+m.getKey().toString()+"\"));");
+				
 				elementScrollBy_DescriptionAndText("test-CHECKOUT: OVERVIEW", m.getKey().toString());
 				extentTest.log(Status.PASS, m.getKey().toString()+"Added Product is available");
 				assertTrue(driver.findElement(MobileBy.xpath("//*[@text='"+m.getKey().toString()+"']/../..//*[@text='"+m.getValue().toString()+"']")).isDisplayed());			
@@ -530,22 +524,18 @@ public class Base
 				else
 				{
 					//extentTest.log(Status.FAIL, "Cart Total "+productAmt+" and Item Total "+producttotal+" are Not Equal",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
-					
+
 				}
 				assertEquals(true, productAmt==producttotal);
 			}
-			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(text(\"FINISH\"));");
-			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"FINISH\"));");
 			elementScrollByText("FINISH");
 
 		}
 		catch (Exception e) 
 		{
-			
+
 			extentTest.log(Status.FAIL, "Added Product is not available in Checkout Overview");
-			//extentTest.log(Status.FAIL, "Added Product is not available in Checkout Overview"+ extentTest.addScreenCaptureFromPath(getScreenshot()));
-			//extentTest.fail("Added Product is not available in Checkout Overview",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
-			//extentTest.log(Status.FAIL, "Added Product is not available in Checkout Overview", MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			
 		}
 	}
 
@@ -553,15 +543,11 @@ public class Base
 	public static void removeProduct_YourCart(String productName) throws IOException
 	{
 		try
-		{
-
-			//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-Cart Content\")).scrollIntoView(text(\""+productName+"\"));");
+		{			
 			elementScrollBy_DescriptionAndText("test-Cart Content", productName);
 			driver.findElement(MobileBy.xpath("//*[@text='"+productName+"']/../..//*[@text='REMOVE']")).click();
-
 			Base.productDetails.remove(productName);
 			extentTest.log(Status.PASS, productName+" removed from cart");
-
 
 		}
 		catch (Exception e) 
