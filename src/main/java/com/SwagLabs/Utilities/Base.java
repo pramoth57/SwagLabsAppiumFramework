@@ -185,6 +185,7 @@ public class Base
 		{
 
 			DesiredCapabilities capabilities = new DesiredCapabilities();
+			//capabilities.setCapability(MobileCapabilityType.UDID, "RZ8M83ZAZ7X");
 			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.swaglabsmobileapp");
 			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.swaglabsmobileapp.MainActivity");
