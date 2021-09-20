@@ -58,7 +58,7 @@ public class SwagLab_ProblemUser_TC extends Base{
 	public void swagLabsTC10() throws IOException, InterruptedException 
 	{
 		extentTest = reports.createTest("Validate Product Details in Inventory and Your Cart Page for Problem User");
-		//appium_Service = initiate_AppiumService();
+		appium_Service = initiate_AppiumService();
 		driver=capabilities("swagLagsapp");	
 		pageObjectManager = new PageObjectManager(driver);	
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_problemUser();

@@ -46,7 +46,7 @@ public class Base
 	//Initiate Extent Report instance
 	public static void intitate_extentReport()
 	{
-		htmlreporter = new ExtentHtmlReporter("C:\\Users\\USER\\git\\SwagLabsAppiumFramework\\SwagLabsAppiumFramework\\AppiumFramework\\Reports\\SwagLabsTestReport.html");
+		htmlreporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"\\Reports\\SwagLabsTesExecutiontReport.html");
 		htmlreporter.config().setEncoding("utf-8");
 		htmlreporter.config().setDocumentTitle("SwagLabs Automation Reports");
 		htmlreporter.config().setReportName("Swaglabs Automtion Execution reports");

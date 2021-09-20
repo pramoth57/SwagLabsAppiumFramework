@@ -42,7 +42,7 @@ public class SwagLab_TC01 extends Base{
 	
 
 	@Test (enabled = true)
-	public void swagLabsTC02() throws IOException, InterruptedException 
+	public void swagLabsTC01() throws IOException, InterruptedException 
 	{	
 		extentTest = reports.createTest("Add Multiple Products and Perform Check out");
 		appium_Service = initiate_AppiumService();		

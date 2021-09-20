@@ -6,7 +6,6 @@
       <class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC">
         <methods>
           <include name="preTestCondition"/>
-          <include name="swagLabsTC10"/>
           <include name="postTestCondition"/>
           <include name="swagLabsTC09"/>
         </methods>

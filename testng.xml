@@ -9,9 +9,8 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="com.SwagLabs.TestCases.SwagLabs_PreCondition" />
-			
 			<class name="com.SwagLabs.TestCases.SwagLab_TC01" />
-			 <class name="com.SwagLabs.TestCases.SwagLab_TC02" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC02" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC03" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC04" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC05" />
