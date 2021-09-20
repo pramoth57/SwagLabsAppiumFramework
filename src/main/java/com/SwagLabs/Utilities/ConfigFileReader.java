@@ -48,6 +48,18 @@ public class ConfigFileReader {
 		}
 	}
 	
+	public String getdevice_os()
+	{
+		String swagLagsappAppPath = properties.getProperty("device_os");
+		if(swagLagsappAppPath!= null) 
+		{	
+			return swagLagsappAppPath;
+		}
+		else 
+		{
+			throw new RuntimeException("driverPath not specified in the Configuration.properties file.");
+		}
+	}
 	
 	public String getdeviceType()
 	{

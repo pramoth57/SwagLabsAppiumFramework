@@ -30,6 +30,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -142,19 +143,18 @@ public class Base
 		String deviceType = null;
 		String device = null;
 		File appDir = new File("resource");
-		File app = new File(appDir, FileReaderManager.getInstance().getConfigReader().getswagLagsappApp());
-
-
+		File app = new File(appDir, FileReader.getInstance().getConfigReader().getswagLagsappApp());
+		String os = FileReader.getInstance().getConfigReader().getdevice_os();
 
 		if(driverDevice.equals("Android"))
 		{
-			deviceType= FileReaderManager.getInstance().getConfigReader().getdeviceType();
-			device=(String) FileReaderManager.getInstance().getConfigReader().getdevice();
+			deviceType= FileReader.getInstance().getConfigReader().getdeviceType();
+			device=(String) FileReader.getInstance().getConfigReader().getdevice();
 		}
 		else
 		{
-			deviceType= FileReaderManager.getInstance().getConfigReader().getemulatorType();
-			device=(String) FileReaderManager.getInstance().getConfigReader().get_EmulatorDevice();
+			deviceType= FileReader.getInstance().getConfigReader().getemulatorType();
+			device=(String) FileReader.getInstance().getConfigReader().get_EmulatorDevice();
 		}
 
 		if(deviceType.contains("emulator"))
@@ -171,16 +171,19 @@ public class Base
 			}
 		}
 		System.out.println();
-		
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
-		capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.swaglabsmobileapp");
-		capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.swaglabsmobileapp.MainActivity");
-		capabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir")+"\\resources\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");		
-		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");				
-		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);
-		
-		/*DesiredCapabilities caps = new DesiredCapabilities();
+
+		if(os.equalsIgnoreCase("Android"))
+		{
+
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.swaglabsmobileapp");
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.swaglabsmobileapp.MainActivity");
+			capabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir")+"\\resources\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");		
+			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");				
+			capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);
+
+			/*DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("browserstack.user", "mooorthiadvocate_m6qFen");
 		caps.setCapability("browserstack.key", "wbr8sabPGdxCYSYytf5f");
 		caps.setCapability("app", "bs://29802c7b7cdcc8e367ecb01b9ceaa181c7545788");
@@ -191,20 +194,47 @@ public class Base
 		caps.setCapability("name", "first_test");*/
 
 
-		try 
-		{
-			//driver = new AndroidDriver<MobileElement>(new URL("http://hub.browserstack.com/wd/hub"), caps);
-			
-			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			extentTest.log(Status.PASS, "Android Driver Started Successfully");
+			try 
+			{
+				//driver = new AndroidDriver<MobileElement>(new URL("http://hub.browserstack.com/wd/hub"), caps);
 
+				driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				extentTest.log(Status.PASS, "Android Driver Started Successfully");
+
+			}
+			catch (Exception e) 
+			{
+				// TODO: handle exception
+				extentTest.log(Status.FAIL, "Android Drive not Started Successfully");
+
+			}
 		}
-		catch (Exception e) 
+		else if(os.equalsIgnoreCase("IOS"))
 		{
-			// TODO: handle exception
-			extentTest.log(Status.FAIL, "Android Drive not Started Successfully");
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, device);
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.swaglabsmobileapp");
+			capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.swaglabsmobileapp.MainActivity");
+			capabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir")+"\\resources\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");		
+			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");				
+			capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);
+			
+			try 
+			{
+				//driver = new AndroidDriver<MobileElement>(new URL("http://hub.browserstack.com/wd/hub"), caps);
+				
+				driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				extentTest.log(Status.PASS, "IOS Driver Started Successfully");
 
+			}
+			catch (Exception e) 
+			{
+				// TODO: handle exception
+				extentTest.log(Status.FAIL, "IOS Drive not Started Successfully");
+
+			}
 		}
 
 		return driver;
@@ -379,9 +409,9 @@ public class Base
 				else 
 				{
 					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
-					
+
 				}
-				
+
 				elementScrollBy_DescriptionAndText("test-Inventory item page", "ADD TO CART");							
 				inventoryproductAmount=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
 				if(productAmount.equals(inventoryproductAmount))
@@ -393,7 +423,7 @@ public class Base
 				{
 					extentTest.log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
 				}
-				
+
 				driver.findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
 
 
@@ -437,9 +467,9 @@ public class Base
 				else 
 				{
 					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
-					
+
 				}
-				
+
 				elementScrollBy_DescriptionAndText("test-Inventory item page", "ADD TO CART");
 				inventoryproductAmount=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
 				if(productAmount.equals(inventoryproductAmount))
@@ -478,7 +508,7 @@ public class Base
 				Thread.sleep(2000);
 				elementScrollBy_DescriptionAndText("test-Cart Content", productName);
 				extentTest.log(Status.PASS, m.getKey().toString()+"Added Product is available");
-				
+
 			} 
 		}
 		catch (Exception e) 
@@ -498,7 +528,7 @@ public class Base
 			for(Map.Entry m : Base.productDetails.entrySet())
 			{ 
 
-				
+
 				elementScrollBy_DescriptionAndText("test-CHECKOUT: OVERVIEW", m.getKey().toString());
 				extentTest.log(Status.PASS, m.getKey().toString()+"Added Product is available");
 				assertTrue(driver.findElement(MobileBy.xpath("//*[@text='"+m.getKey().toString()+"']/../..//*[@text='"+m.getValue().toString()+"']")).isDisplayed());			
@@ -523,7 +553,7 @@ public class Base
 				}
 				else
 				{
-					//extentTest.log(Status.FAIL, "Cart Total "+productAmt+" and Item Total "+producttotal+" are Not Equal",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+					extentTest.log(Status.FAIL, "Cart Total "+productAmt+" and Item Total "+producttotal+" are Not Equal",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 
 				}
 				assertEquals(true, productAmt==producttotal);
@@ -535,7 +565,7 @@ public class Base
 		{
 
 			extentTest.log(Status.FAIL, "Added Product is not available in Checkout Overview");
-			
+
 		}
 	}
 

@@ -20,8 +20,8 @@ import com.SwagLabs.Pages.SwagLabs_LoginPage;
 import com.SwagLabs.Pages.SwagLabs_ProductPage;
 import com.SwagLabs.Pages.SwagLabs_YourCartPage;
 import com.SwagLabs.Utilities.Base;
-import com.SwagLabs.Utilities.FileReaderManager;
-import com.SwagLabs.Utilities.PageObjectManager;
+import com.SwagLabs.Utilities.FileReader;
+import com.SwagLabs.Utilities.PageObjects;
 import com.aventstack.extentreports.ExtentTest;
 
 import io.appium.java_client.AppiumDriver;
@@ -29,31 +29,33 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
-public class SwagLab_TC03 extends Base{
+public class SwagLab_TC05_ContinueShopping_AddProduct extends Base{
 	AppiumDriver<MobileElement> driver;
-	PageObjectManager pageObjectManager;
+	PageObjects pageObjectManager;
 
 	@BeforeMethod
 	public void preTestCondition() throws IOException, InterruptedException
 	{
 		Runtime.getRuntime().exec("taskkill /F /IM node.exe");
+		//logger.info("Kill Existing Appium Instance");
 		Thread.sleep(3000);
-	}	
-
+	}
 	@Test (enabled = true)
-	public void swagLabsTC03() throws IOException, InterruptedException 
-	{ 
-		extentTest = reports.createTest("Add Multiple Products, Remove all Products Before CheckOut and Verify Item total amount");
-		appium_Service = initiate_AppiumService();		
-		driver=capabilities("swagLagsapp");		
-		pageObjectManager = new PageObjectManager(driver);	
-		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();		
-		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart(FileReaderManager.getInstance().getConfigReader().getProduct_Listitem1());			
-		pageObjectManager.get_SwagLabs_YourCartPage_Page().removeAll_Checkout();		
+	public void swagLabsTC05() throws IOException, InterruptedException 
+	{
+		extentTest = reports.createTest("Add Single Products, Click Continue Shopping in YourCart Page and Add Another Product, Perform Checkout");
+		appium_Service = initiate_AppiumService();
+		driver=capabilities("swagLagsapp");	
+		pageObjectManager = new PageObjects(driver);	
+		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();			
+		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart(FileReader.getInstance().getConfigReader().getProduct_item1());		
+		pageObjectManager.get_SwagLabs_YourCartPage_Page().click_Continue();			
+		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart(FileReader.getInstance().getConfigReader().getProduct_item2());			
+		pageObjectManager.get_SwagLabs_YourCartPage_Page().checkout();		
 		pageObjectManager.get_SwagLabs_CheckoutInformation_Page().checkout();		
 		pageObjectManager.get_SwagLabs_CheckoutOverView_Page().checkoutoverview_finish();			
 		pageObjectManager.getSwagLabs_CheckoutComplete_Page().checkoutComplete();
-		appium_Service.stop();
+		appium_Service.stop();	
 
 	}
 

@@ -20,8 +20,8 @@ import com.SwagLabs.Pages.SwagLabs_LoginPage;
 import com.SwagLabs.Pages.SwagLabs_ProductPage;
 import com.SwagLabs.Pages.SwagLabs_YourCartPage;
 import com.SwagLabs.Utilities.Base;
-import com.SwagLabs.Utilities.FileReaderManager;
-import com.SwagLabs.Utilities.PageObjectManager;
+import com.SwagLabs.Utilities.FileReader;
+import com.SwagLabs.Utilities.PageObjects;
 import com.aventstack.extentreports.ExtentTest;
 
 import io.appium.java_client.AppiumDriver;
@@ -29,9 +29,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
-public class SwagLab_TC01 extends Base{
+public class SwagLab_TC02_SingleProduct_Checkout extends Base{
 	AppiumDriver<MobileElement> driver;
-	PageObjectManager pageObjectManager;
+	PageObjects pageObjectManager;
 
 	@BeforeMethod
 	public void preTestCondition() throws IOException, InterruptedException
@@ -42,14 +42,14 @@ public class SwagLab_TC01 extends Base{
 	
 
 	@Test (enabled = true)
-	public void swagLabsTC01() throws IOException, InterruptedException 
+	public void swagLabsTC02() throws IOException, InterruptedException 
 	{	
-		extentTest = reports.createTest("Add Multiple Products and Perform Check out");
+		extentTest = reports.createTest("Add Single Products and Perform Check out");
 		appium_Service = initiate_AppiumService();		
 		driver=capabilities("swagLagsapp");	
-		pageObjectManager = new PageObjectManager(driver);
+		pageObjectManager = new PageObjects(driver);
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();
-		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart(FileReaderManager.getInstance().getConfigReader().getProduct_Listitem1());		
+		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart(FileReader.getInstance().getConfigReader().getProduct_item1());		
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().checkout();			
 		pageObjectManager.get_SwagLabs_CheckoutInformation_Page().checkout();		
 		pageObjectManager.get_SwagLabs_CheckoutOverView_Page().checkoutoverview_finish();		

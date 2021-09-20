@@ -20,7 +20,7 @@ import com.SwagLabs.Pages.SwagLabs_LoginPage;
 import com.SwagLabs.Pages.SwagLabs_ProductPage;
 import com.SwagLabs.Pages.SwagLabs_YourCartPage;
 import com.SwagLabs.Utilities.Base;
-import com.SwagLabs.Utilities.PageObjectManager;
+import com.SwagLabs.Utilities.PageObjects;
 import com.aventstack.extentreports.ExtentTest;
 
 import io.appium.java_client.AppiumDriver;
@@ -30,7 +30,7 @@ import io.appium.java_client.android.AndroidElement;
 
 public class SwagLab_Test extends Base{
 	AppiumDriver<MobileElement> driver;
-	PageObjectManager pageObjectManager;
+	PageObjects pageObjectManager;
 
 	//Logger logger = LogManager.getLogger(SwagLabTest.class);
 
@@ -51,7 +51,7 @@ public class SwagLab_Test extends Base{
 		extentTest = reports.createTest("Add Multiple Products and Perform Check out");
 		appium_Service = initiate_AppiumService();		
 		driver=capabilities("swagLagsapp");						
-		pageObjectManager = new PageObjectManager(driver);		
+		pageObjectManager = new PageObjects(driver);		
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();			
 		//Sauce Labs Bolt T-Shirt,Sauce Labs Backpack,Sauce Labs Onesie
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart("Sauce Labs Backpack,Sauce Labs Bike Light");
@@ -69,7 +69,7 @@ public class SwagLab_Test extends Base{
 		extentTest = reports.createTest("Add Single Products and Perform Check out");
 		appium_Service = initiate_AppiumService();		
 		driver=capabilities("swagLagsapp");	
-		pageObjectManager = new PageObjectManager(driver);
+		pageObjectManager = new PageObjects(driver);
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart("Sauce Labs Backpack");		
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().checkout();			
@@ -87,7 +87,7 @@ public class SwagLab_Test extends Base{
 		extentTest = reports.createTest("Add Multiple Products, Remove all Products Before CheckOut and Verify Item total amount");
 		appium_Service = initiate_AppiumService();		
 		driver=capabilities("swagLagsapp");		
-		pageObjectManager = new PageObjectManager(driver);	
+		pageObjectManager = new PageObjects(driver);	
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();		
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart("Sauce Labs Backpack,Sauce Labs Bike Light");			
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().removeAll_Checkout();		
@@ -104,7 +104,7 @@ public class SwagLab_Test extends Base{
 		extentTest = reports.createTest("Add Multiple Products, Remove one Products Before CheckOut and Verify Item total amount");
 		appium_Service = initiate_AppiumService();		
 		driver=capabilities("swagLagsapp");	
-		pageObjectManager = new PageObjectManager(driver);	
+		pageObjectManager = new PageObjects(driver);	
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();		
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart("Sauce Labs Backpack,Sauce Labs Bike Light");		
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().remove_Checkout("Sauce Labs Backpack");				
@@ -120,7 +120,7 @@ public class SwagLab_Test extends Base{
 		extentTest = reports.createTest("Add Single Products, Click Continue Shopping in YourCart Page and Add Another Product, Perform Checkout");
 		appium_Service = initiate_AppiumService();
 		driver=capabilities("swagLagsapp");	
-		pageObjectManager = new PageObjectManager(driver);	
+		pageObjectManager = new PageObjects(driver);	
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();			
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart("Sauce Labs Backpack");		
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().click_Continue();			
@@ -140,7 +140,7 @@ public class SwagLab_Test extends Base{
 		extentTest = reports.createTest("Add Single Products and  Cancel the Check out on Checkout Information Page");
 		appium_Service = initiate_AppiumService();
 		driver=capabilities("swagLagsapp");	
-		pageObjectManager = new PageObjectManager(driver);	
+		pageObjectManager = new PageObjects(driver);	
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();		
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart("Sauce Labs Backpack");		
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().checkout();				
@@ -154,7 +154,7 @@ public class SwagLab_Test extends Base{
 		extentTest = reports.createTest("Add Single Products and  Cancel the Check out on Checkout Overview Page");
 		appium_Service = initiate_AppiumService();		
 		driver=capabilities("swagLagsapp");		
-		pageObjectManager = new PageObjectManager(driver);	
+		pageObjectManager = new PageObjects(driver);	
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();			
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart("Sauce Labs Backpack");			
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().checkout();			
@@ -170,7 +170,7 @@ public class SwagLab_Test extends Base{
 		extentTest = reports.createTest("Verify Check out Operation With Problem User");
 		appium_Service = initiate_AppiumService();
 		driver=capabilities("swagLagsapp");	
-		pageObjectManager = new PageObjectManager(driver);	
+		pageObjectManager = new PageObjects(driver);	
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_problemUser();				
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart("Sauce Labs Backpack,Sauce Labs Bike Light");		
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().checkout();			

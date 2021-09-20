@@ -1,16 +1,16 @@
 package com.SwagLabs.Utilities;
 
-public class FileReaderManager {
+public class FileReader {
 
-	private static FileReaderManager fileReaderManager = new FileReaderManager();
+	private static FileReader fileReaderManager = new FileReader();
 	private static ConfigFileReader configFileReader;
 
-	private FileReaderManager() 
+	private FileReader() 
 	{
 	
 	}
 	//Create Singleton Access for reading Properties File
-	public static FileReaderManager getInstance( ) 
+	public static FileReader getInstance( ) 
 	{
 		return fileReaderManager;
 	}

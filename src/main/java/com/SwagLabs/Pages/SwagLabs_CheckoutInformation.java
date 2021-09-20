@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import com.SwagLabs.Utilities.Base;
-import com.SwagLabs.Utilities.FileReaderManager;
+import com.SwagLabs.Utilities.FileReader;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
@@ -49,9 +49,9 @@ public class SwagLabs_CheckoutInformation extends Base {
 	public void checkout() throws IOException
 	{		
 		elementVisibility("CHECKOUT: INFORMATION");
-		elementSendKeys(firstName, "First Name", FileReaderManager.getInstance().getConfigReader().getFirstName());
-		elementSendKeys(lasttName, "Last Name", FileReaderManager.getInstance().getConfigReader().getLastName());
-		elementSendKeys(postalCode, "PostalCode", FileReaderManager.getInstance().getConfigReader().getPincode());
+		elementSendKeys(firstName, "First Name", FileReader.getInstance().getConfigReader().getFirstName());
+		elementSendKeys(lasttName, "Last Name", FileReader.getInstance().getConfigReader().getLastName());
+		elementSendKeys(postalCode, "PostalCode", FileReader.getInstance().getConfigReader().getPincode());
 		elementClick(continue_btn, "Continue");
 
 	}
@@ -59,9 +59,9 @@ public class SwagLabs_CheckoutInformation extends Base {
 	public void cancel() throws IOException
 	{	
 		elementVisibility("CHECKOUT: INFORMATION");
-		elementSendKeys(firstName, "First Name", FileReaderManager.getInstance().getConfigReader().getFirstName());
-		elementSendKeys(lasttName, "Last Name", FileReaderManager.getInstance().getConfigReader().getLastName());
-		elementSendKeys(postalCode, "PostalCode", FileReaderManager.getInstance().getConfigReader().getPincode());
+		elementSendKeys(firstName, "First Name", FileReader.getInstance().getConfigReader().getFirstName());
+		elementSendKeys(lasttName, "Last Name", FileReader.getInstance().getConfigReader().getLastName());
+		elementSendKeys(postalCode, "PostalCode", FileReader.getInstance().getConfigReader().getPincode());
 		elementClick(cancel_btn, "Cancel");
 		
 	}
