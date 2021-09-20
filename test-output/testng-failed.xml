@@ -10,27 +10,6 @@
           <include name="swagLabsTC09"/>
         </methods>
       </class> <!-- com.SwagLabs.TestCases.SwagLab_ProblemUser_TC -->
-      <class name="com.SwagLabs.TestCases.SwagLab_TC08">
-        <methods>
-          <include name="postTestCondition"/>
-          <include name="swagLabsTC08"/>
-          <include name="preTestCondition"/>
-        </methods>
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC08 -->
-      <class name="com.SwagLabs.TestCases.SwagLab_TC05">
-        <methods>
-          <include name="postTestCondition"/>
-          <include name="swagLabsTC05"/>
-          <include name="preTestCondition"/>
-        </methods>
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC05 -->
-      <class name="com.SwagLabs.TestCases.SwagLab_TC01">
-        <methods>
-          <include name="preTestCondition"/>
-          <include name="postTestCondition"/>
-          <include name="swagLabsTC01"/>
-        </methods>
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC01 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
