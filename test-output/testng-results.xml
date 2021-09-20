@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="12" passed="10" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-09-19T18:05:40 IST" name="Suite" finished-at="2021-09-19T18:13:03 IST" duration-ms="443244">
+    <groups>
+    </groups>
+    <test started-at="2021-09-19T18:05:40 IST" name="Test" finished-at="2021-09-19T18:13:03 IST" duration-ms="443244">
+      <class name="com.SwagLabs.TestCases.SwagLabs_PreCondition">
+        <test-method signature="SetupExtentReport()[pri:0, instance:com.SwagLabs.TestCases.SwagLabs_PreCondition@c88a337]" started-at="2021-09-19T18:05:40 IST" name="SetupExtentReport" finished-at="2021-09-19T18:05:40 IST" duration-ms="169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupExtentReport -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLabs_PreCondition -->
+      <class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC">
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@242b836]" started-at="2021-09-19T18:12:19 IST" name="preTestCondition" finished-at="2021-09-19T18:12:22 IST" duration-ms="3004" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC09()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@242b836]" started-at="2021-09-19T18:12:22 IST" name="swagLabsTC09" finished-at="2021-09-19T18:12:58 IST" duration-ms="36302" status="FAIL">
+          <exception class="java.nio.file.InvalidPathException">
+            <message>
+              <![CDATA[Illegal char <:> at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1632055378488.png]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.nio.file.InvalidPathException: Illegal char <:> at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1632055378488.png
+at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
+at java.base/java.nio.file.Path.of(Path.java:147)
+at java.base/java.nio.file.Paths.get(Paths.java:69)
+at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMediaFileLocal(LocalMediaStorageHandler.java:77)
+at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMedia(LocalMediaStorageHandler.java:29)
+at com.aventstack.extentreports.reporter.BasicFileReporter.autoCreateRelativePathMedia(BasicFileReporter.java:260)
+at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(BasicFileReporter.java:243)
+at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
+at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
+at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
+at com.SwagLabs.Utilities.Base.yourCart_ProductValidation(Base.java:490)
+at com.SwagLabs.Pages.SwagLabs_YourCartPage.checkout(SwagLabs_YourCartPage.java:46)
+at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC09(SwagLab_ProblemUser_TC.java:53)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.nio.file.InvalidPathException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC09 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@242b836]" started-at="2021-09-19T18:12:58 IST" name="postTestCondition" finished-at="2021-09-19T18:12:58 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@242b836]" started-at="2021-09-19T18:12:58 IST" name="preTestCondition" finished-at="2021-09-19T18:13:01 IST" duration-ms="3003" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC10()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@242b836]" started-at="2021-09-19T18:13:01 IST" name="swagLabsTC10" finished-at="2021-09-19T18:13:03 IST" duration-ms="2026" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-PC', ip: '192.168.42.140', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '15.0.2'
+Driver info: driver.version: AndroidDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Connection refused: no further information
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USER-PC', ip: '192.168.42.140', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '15.0.2'
+Driver info: driver.version: AndroidDriver
+at io.appium.java_client.remote.AppiumCommandExecutor.lambda$5(AppiumCommandExecutor.java:251)
+at java.base/java.util.Optional.orElseGet(Optional.java:362)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:46)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+at io.appium.java_client.HasSessionDetails.getSessionDetails(HasSessionDetails.java:39)
+at io.appium.java_client.HasSessionDetails.getSessionDetail(HasSessionDetails.java:56)
+at io.appium.java_client.HasSessionDetails.getPlatformName(HasSessionDetails.java:65)
+at io.appium.java_client.pagefactory.AppiumFieldDecorator.<init>(AppiumFieldDecorator.java:96)
+at io.appium.java_client.pagefactory.AppiumFieldDecorator.<init>(AppiumFieldDecorator.java:144)
+at com.SwagLabs.Pages.SwagLabs_LoginPage.<init>(SwagLabs_LoginPage.java:23)
+at com.SwagLabs.Utilities.PageObjectManager.get_SwagLabs_LoginPage_Page(PageObjectManager.java:45)
+at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC10(SwagLab_ProblemUser_TC.java:64)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.net.ConnectException: Connection refused: no further information
+at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
+at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+at java.base/java.net.Socket.connect(Socket.java:648)
+at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
+at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
+at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
+at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+at okhttp3.RealCall.execute(RealCall.java:77)
+at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+... 40 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC10 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@242b836]" started-at="2021-09-19T18:13:03 IST" name="postTestCondition" finished-at="2021-09-19T18:13:03 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_ProblemUser_TC -->
+      <class name="com.SwagLabs.TestCases.SwagLabs_PostCondition">
+        <test-method signature="SetupExtentReport()[pri:0, instance:com.SwagLabs.TestCases.SwagLabs_PostCondition@3f6f6701]" started-at="2021-09-19T18:13:03 IST" name="SetupExtentReport" finished-at="2021-09-19T18:13:03 IST" duration-ms="335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupExtentReport -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLabs_PostCondition -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC07">
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC07@771a660]" started-at="2021-09-19T18:10:33 IST" name="preTestCondition" finished-at="2021-09-19T18:10:36 IST" duration-ms="3004" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC07()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC07@771a660]" started-at="2021-09-19T18:10:36 IST" name="swagLabsTC07" finished-at="2021-09-19T18:11:11 IST" duration-ms="34945" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC07 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC07@771a660]" started-at="2021-09-19T18:11:11 IST" name="postTestCondition" finished-at="2021-09-19T18:11:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC07 -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC08">
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC08@2d52216b]" started-at="2021-09-19T18:11:11 IST" name="preTestCondition" finished-at="2021-09-19T18:11:14 IST" duration-ms="3003" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC08()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC08@2d52216b]" started-at="2021-09-19T18:11:14 IST" name="swagLabsTC08" finished-at="2021-09-19T18:12:19 IST" duration-ms="64840" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC08 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC08@2d52216b]" started-at="2021-09-19T18:12:19 IST" name="postTestCondition" finished-at="2021-09-19T18:12:19 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC08 -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC05">
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC05@7db12bb6]" started-at="2021-09-19T18:08:57 IST" name="preTestCondition" finished-at="2021-09-19T18:09:00 IST" duration-ms="3003" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC05()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC05@7db12bb6]" started-at="2021-09-19T18:09:00 IST" name="swagLabsTC05" finished-at="2021-09-19T18:10:02 IST" duration-ms="61445" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC05 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC05@7db12bb6]" started-at="2021-09-19T18:10:02 IST" name="postTestCondition" finished-at="2021-09-19T18:10:02 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC05 -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC06">
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC06@783a467b]" started-at="2021-09-19T18:10:02 IST" name="preTestCondition" finished-at="2021-09-19T18:10:05 IST" duration-ms="3002" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC06()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC06@783a467b]" started-at="2021-09-19T18:10:05 IST" name="swagLabsTC06" finished-at="2021-09-19T18:10:33 IST" duration-ms="28317" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC06 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC06@783a467b]" started-at="2021-09-19T18:10:33 IST" name="postTestCondition" finished-at="2021-09-19T18:10:33 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC06 -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC03">
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC03@52b1beb6]" started-at="2021-09-19T18:07:25 IST" name="preTestCondition" finished-at="2021-09-19T18:07:28 IST" duration-ms="3004" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC03()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC03@52b1beb6]" started-at="2021-09-19T18:07:28 IST" name="swagLabsTC03" finished-at="2021-09-19T18:08:12 IST" duration-ms="43274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC03 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC03@52b1beb6]" started-at="2021-09-19T18:08:12 IST" name="postTestCondition" finished-at="2021-09-19T18:08:12 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC03 -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC04">
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC04@273e7444]" started-at="2021-09-19T18:08:12 IST" name="preTestCondition" finished-at="2021-09-19T18:08:15 IST" duration-ms="3007" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC04()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC04@273e7444]" started-at="2021-09-19T18:08:15 IST" name="swagLabsTC04" finished-at="2021-09-19T18:08:57 IST" duration-ms="42438" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC04 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC04@273e7444]" started-at="2021-09-19T18:08:57 IST" name="postTestCondition" finished-at="2021-09-19T18:08:57 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC04 -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC01">
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC01@36916eb0]" started-at="2021-09-19T18:05:40 IST" name="preTestCondition" finished-at="2021-09-19T18:05:43 IST" duration-ms="3020" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC02()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC01@36916eb0]" started-at="2021-09-19T18:05:43 IST" name="swagLabsTC02" finished-at="2021-09-19T18:06:41 IST" duration-ms="58013" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC02 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC01@36916eb0]" started-at="2021-09-19T18:06:41 IST" name="postTestCondition" finished-at="2021-09-19T18:06:41 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC01 -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC02">
+        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC02@53aac487]" started-at="2021-09-19T18:06:41 IST" name="preTestCondition" finished-at="2021-09-19T18:06:44 IST" duration-ms="3004" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method signature="swagLabsTC02()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC02@53aac487]" started-at="2021-09-19T18:06:44 IST" name="swagLabsTC02" finished-at="2021-09-19T18:07:25 IST" duration-ms="41014" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC02 -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC02@53aac487]" started-at="2021-09-19T18:07:25 IST" name="postTestCondition" finished-at="2021-09-19T18:07:25 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC02 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
