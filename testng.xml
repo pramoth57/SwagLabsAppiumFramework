@@ -6,7 +6,7 @@
 			/> -->
 	</listeners>
 
-	<test thread-count="5" name="Test">
+	<test thread-count="5" name="Android Test">
 		<classes>
 			<class name="com.SwagLabs.TestCases.SwagLabs_PreCondition" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout" />
