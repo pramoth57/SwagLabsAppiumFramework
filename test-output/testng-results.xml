@@ -1,78 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="10" passed="9" failed="1" skipped="0">
+<testng-results ignored="43" total="53" passed="9" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-09-23T18:11:09 IST" name="Suite" finished-at="2021-09-23T18:14:38 IST" duration-ms="209176">
+  <suite started-at="2021-09-23T19:23:43 IST" name="Suite" finished-at="2021-09-23T19:29:46 IST" duration-ms="362650">
     <groups>
     </groups>
-    <test started-at="2021-09-23T18:11:09 IST" name="Android Device Test" finished-at="2021-09-23T18:14:07 IST" duration-ms="178102">
-      <class name="com.SwagLabs.TestCases.SwagLabs_PreCondition">
-        <test-method is-config="true" signature="SetupExtentReport()[pri:0, instance:com.SwagLabs.TestCases.SwagLabs_PreCondition@7ef82753]" started-at="2021-09-23T18:11:06 IST" name="SetupExtentReport" finished-at="2021-09-23T18:11:09 IST" duration-ms="2731" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetupExtentReport -->
-      </class> <!-- com.SwagLabs.TestCases.SwagLabs_PreCondition -->
+    <test started-at="2021-09-23T19:23:43 IST" name="Android Test" finished-at="2021-09-23T19:29:46 IST" duration-ms="362650">
       <class name="com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo">
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo@3b0fe47a]" started-at="2021-09-23T18:11:09 IST" name="preTestCondition" finished-at="2021-09-23T18:11:09 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method signature="swagLabsTC06(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo@3b0fe47a]" started-at="2021-09-23T18:11:09 IST" name="swagLabsTC06" finished-at="2021-09-23T18:11:51 IST" duration-ms="42182" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[R9ZN90E9SWE]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="swagLabsTC06()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo@45099dd3]" started-at="2021-09-23T19:27:20 IST" name="swagLabsTC06" finished-at="2021-09-23T19:27:43 IST" duration-ms="23379" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- swagLabsTC06 -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo@3b0fe47a]" started-at="2021-09-23T18:11:51 IST" name="postTestCondition" finished-at="2021-09-23T18:11:51 IST" duration-ms="1" status="PASS">
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo -->
+      <class name="com.SwagLabs.TestCases.SwagLabs_PreCondition">
+        <test-method is-config="true" signature="SetupExtentReport()[pri:0, instance:com.SwagLabs.TestCases.SwagLabs_PreCondition@6fdbe764]" started-at="2021-09-23T19:23:40 IST" name="SetupExtentReport" finished-at="2021-09-23T19:23:43 IST" duration-ms="2751" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postTestCondition -->
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo -->
-      <class name="com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage">
-        <test-method signature="swagLabsTC08(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage@58cbafc2]" started-at="2021-09-23T18:12:25 IST" name="swagLabsTC08" finished-at="2021-09-23T18:13:21 IST" duration-ms="55851" status="PASS">
+        </test-method> <!-- SetupExtentReport -->
+        <test-method is-config="true" signature="preTestCondition(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLabs_PreCondition@6fdbe764]" started-at="2021-09-23T19:23:43 IST" name="preTestCondition" finished-at="2021-09-23T19:23:59 IST" duration-ms="16072" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[R9ZN90E9SWE]]>
+                <![CDATA[5200c70e420a86f5]]>
               </value>
             </param>
           </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preTestCondition -->
+        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLabs_PreCondition@6fdbe764]" started-at="2021-09-23T19:29:46 IST" name="postTestCondition" finished-at="2021-09-23T19:29:46 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postTestCondition -->
+        <test-method is-config="true" signature="closeExtentReport()[pri:0, instance:com.SwagLabs.TestCases.SwagLabs_PreCondition@6fdbe764]" started-at="2021-09-23T19:29:46 IST" name="closeExtentReport" finished-at="2021-09-23T19:29:46 IST" depends-on-methods="com.SwagLabs.TestCases.SwagLabs_PostCondition.SetupExtentReport" duration-ms="369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeExtentReport -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLabs_PreCondition -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout">
+        <test-method signature="swagLabsTC01()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout@f09733f]" started-at="2021-09-23T19:23:59 IST" name="swagLabsTC01" finished-at="2021-09-23T19:24:42 IST" duration-ms="42574" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC01 -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage">
+        <test-method signature="swagLabsTC08()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage@6c1a5b54]" started-at="2021-09-23T19:28:13 IST" name="swagLabsTC08" finished-at="2021-09-23T19:29:06 IST" duration-ms="52832" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- swagLabsTC08 -->
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage@58cbafc2]" started-at="2021-09-23T18:12:25 IST" name="preTestCondition" finished-at="2021-09-23T18:12:25 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage@58cbafc2]" started-at="2021-09-23T18:13:21 IST" name="postTestCondition" finished-at="2021-09-23T18:13:21 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTestCondition -->
       </class> <!-- com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage -->
       <class name="com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct">
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct@75d3a5e0]" started-at="2021-09-23T18:13:48 IST" name="preTestCondition" finished-at="2021-09-23T18:13:51 IST" duration-ms="3001" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method signature="swagLabsTC09(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct@75d3a5e0]" started-at="2021-09-23T18:13:51 IST" name="swagLabsTC09" finished-at="2021-09-23T18:14:07 IST" duration-ms="16182" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[R9ZN90E9SWE]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="swagLabsTC10()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct@60099951]" started-at="2021-09-23T19:29:29 IST" name="swagLabsTC10" finished-at="2021-09-23T19:29:46 IST" duration-ms="16787" status="FAIL">
           <exception class="java.nio.file.InvalidPathException">
             <message>
-              <![CDATA[Illegal char <:> at index 51: C:/Users/USER/AppiumFinal/AppiumFramework/Reports/C:\Users\USER\AppiumFinal\AppiumFramework\Reports/extent-media.0/1632401047532.png]]>
+              <![CDATA[Illegal char <:> at index 51: C:/Users/USER/AppiumFinal/AppiumFramework/Reports/C:\Users\USER\AppiumFinal\AppiumFramework\Reports/extent-media.0/1632405586042.png]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.nio.file.InvalidPathException: Illegal char <:> at index 51: C:/Users/USER/AppiumFinal/AppiumFramework/Reports/C:\Users\USER\AppiumFinal\AppiumFramework\Reports/extent-media.0/1632401047532.png
+              <![CDATA[java.nio.file.InvalidPathException: Illegal char <:> at index 51: C:/Users/USER/AppiumFinal/AppiumFramework/Reports/C:\Users\USER\AppiumFinal\AppiumFramework\Reports/extent-media.0/1632405586042.png
 at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
 at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
 at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
@@ -87,9 +71,9 @@ at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(
 at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
 at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
 at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
-at com.SwagLabs.Utilities.Base.yourCart_ProductValidation(Base.java:618)
+at com.SwagLabs.Utilities.Base.yourCart_ProductValidation(Base.java:654)
 at com.SwagLabs.Pages.SwagLabs_YourCartPage.checkout(SwagLabs_YourCartPage.java:51)
-at com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct.swagLabsTC09(SwagLab_TC10_ProblemUser_AddMultipleProduct.java:60)
+at com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct.swagLabsTC10(SwagLab_TC10_ProblemUser_AddMultipleProduct.java:49)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -106,42 +90,8 @@ at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-at java.base/java.lang.Thread.run(Thread.java:832)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.nio.file.InvalidPathException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- swagLabsTC09 -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct@75d3a5e0]" started-at="2021-09-23T18:14:07 IST" name="postTestCondition" finished-at="2021-09-23T18:14:07 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTestCondition -->
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct -->
-      <class name="com.SwagLabs.TestCases.SwagLabs_PostCondition">
-        <test-method is-config="true" signature="SetupExtentReport()[pri:0, instance:com.SwagLabs.TestCases.SwagLabs_PostCondition@74d1dc36]" started-at="2021-09-23T18:14:38 IST" name="SetupExtentReport" finished-at="2021-09-23T18:14:38 IST" duration-ms="305" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "io.appium.java_client.service.local.AppiumDriverLocalService.stop()" because "this.appium_Service" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "io.appium.java_client.service.local.AppiumDriverLocalService.stop()" because "this.appium_Service" is null
-at com.SwagLabs.TestCases.SwagLabs_PostCondition.SetupExtentReport(SwagLabs_PostCondition.java:19)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:344)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
 at org.testng.SuiteRunner.run(SuiteRunner.java:276)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
@@ -154,159 +104,52 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.nio.file.InvalidPathException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC10 -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne">
+        <test-method signature="swagLabsTC04()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne@2794eab6]" started-at="2021-09-23T19:25:53 IST" name="swagLabsTC04" finished-at="2021-09-23T19:26:29 IST" duration-ms="35331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC04 -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne -->
+      <class name="com.SwagLabs.TestCases.SwagLabs_PostCondition">
+        <test-method is-config="true" signature="SetupExtentReport()[pri:0, instance:com.SwagLabs.TestCases.SwagLabs_PostCondition@750e2b97]" started-at="2021-09-23T19:29:46 IST" name="SetupExtentReport" finished-at="2021-09-23T19:29:46 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupExtentReport -->
       </class> <!-- com.SwagLabs.TestCases.SwagLabs_PostCondition -->
-      <class name="com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview">
-        <test-method signature="swagLabsTC07(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview@202b0582]" started-at="2021-09-23T18:11:51 IST" name="swagLabsTC07" finished-at="2021-09-23T18:12:25 IST" duration-ms="34322" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[R9ZN90E9SWE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- swagLabsTC07 -->
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview@202b0582]" started-at="2021-09-23T18:11:51 IST" name="preTestCondition" finished-at="2021-09-23T18:11:51 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview@202b0582]" started-at="2021-09-23T18:12:25 IST" name="postTestCondition" finished-at="2021-09-23T18:12:25 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTestCondition -->
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview -->
-      <class name="com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation">
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation@2034b64c]" started-at="2021-09-23T18:13:21 IST" name="preTestCondition" finished-at="2021-09-23T18:13:24 IST" duration-ms="3001" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method signature="swagLabsTC10(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation@2034b64c]" started-at="2021-09-23T18:13:24 IST" name="swagLabsTC10" finished-at="2021-09-23T18:13:48 IST" duration-ms="23521" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[R9ZN90E9SWE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- swagLabsTC10 -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation@2034b64c]" started-at="2021-09-23T18:13:48 IST" name="postTestCondition" finished-at="2021-09-23T18:13:48 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTestCondition -->
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation -->
-    </test> <!-- Android Device Test -->
-    <test started-at="2021-09-23T18:11:09 IST" name="Android Test" finished-at="2021-09-23T18:14:38 IST" duration-ms="209176">
-      <class name="com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout">
-        <test-method signature="swagLabsTC01(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout@18df8434]" started-at="2021-09-23T18:11:09 IST" name="swagLabsTC01" finished-at="2021-09-23T18:12:04 IST" duration-ms="55215" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[5200c70e420a86f5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- swagLabsTC01 -->
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout@18df8434]" started-at="2021-09-23T18:11:09 IST" name="preTestCondition" finished-at="2021-09-23T18:11:09 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout@18df8434]" started-at="2021-09-23T18:12:04 IST" name="postTestCondition" finished-at="2021-09-23T18:12:04 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTestCondition -->
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout -->
-      <class name="com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne">
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne@229c6181]" started-at="2021-09-23T18:13:15 IST" name="preTestCondition" finished-at="2021-09-23T18:13:15 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method signature="swagLabsTC04(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne@229c6181]" started-at="2021-09-23T18:13:15 IST" name="swagLabsTC04" finished-at="2021-09-23T18:13:51 IST" duration-ms="35668" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[5200c70e420a86f5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- swagLabsTC04 -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne@229c6181]" started-at="2021-09-23T18:13:51 IST" name="postTestCondition" finished-at="2021-09-23T18:13:51 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTestCondition -->
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne -->
       <class name="com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct">
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct@4686afc2]" started-at="2021-09-23T18:13:51 IST" name="preTestCondition" finished-at="2021-09-23T18:13:51 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method signature="swagLabsTC05(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct@4686afc2]" started-at="2021-09-23T18:13:51 IST" name="swagLabsTC05" finished-at="2021-09-23T18:14:38 IST" duration-ms="47058" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[5200c70e420a86f5]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="swagLabsTC05()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct@6340e5f0]" started-at="2021-09-23T19:26:29 IST" name="swagLabsTC05" finished-at="2021-09-23T19:27:20 IST" duration-ms="51129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- swagLabsTC05 -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct@4686afc2]" started-at="2021-09-23T18:14:38 IST" name="postTestCondition" finished-at="2021-09-23T18:14:38 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTestCondition -->
       </class> <!-- com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct -->
-      <class name="com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout">
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout@65c7a252]" started-at="2021-09-23T18:12:04 IST" name="preTestCondition" finished-at="2021-09-23T18:12:04 IST" duration-ms="0" status="PASS">
+      <class name="com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview">
+        <test-method signature="swagLabsTC07()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview@13e344d]" started-at="2021-09-23T19:27:43 IST" name="swagLabsTC07" finished-at="2021-09-23T19:28:13 IST" duration-ms="29837" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method signature="swagLabsTC02(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout@65c7a252]" started-at="2021-09-23T18:12:04 IST" name="swagLabsTC02" finished-at="2021-09-23T18:12:38 IST" duration-ms="34182" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[5200c70e420a86f5]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- swagLabsTC07 -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation">
+        <test-method signature="swagLabsTC10()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation@1c7696c6]" started-at="2021-09-23T19:29:06 IST" name="swagLabsTC10" finished-at="2021-09-23T19:29:29 IST" duration-ms="22795" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- swagLabsTC10 -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation -->
+      <class name="com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout">
+        <test-method signature="swagLabsTC02()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout@e350b40]" started-at="2021-09-23T19:24:42 IST" name="swagLabsTC02" finished-at="2021-09-23T19:25:16 IST" duration-ms="34727" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- swagLabsTC02 -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout@65c7a252]" started-at="2021-09-23T18:12:38 IST" name="postTestCondition" finished-at="2021-09-23T18:12:38 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTestCondition -->
       </class> <!-- com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout -->
       <class name="com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll">
-        <test-method signature="swagLabsTC03(java.lang.String)[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll@4d154ccd]" started-at="2021-09-23T18:12:38 IST" name="swagLabsTC03" finished-at="2021-09-23T18:13:15 IST" duration-ms="37015" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[5200c70e420a86f5]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="swagLabsTC03()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll@41a0aa7d]" started-at="2021-09-23T19:25:16 IST" name="swagLabsTC03" finished-at="2021-09-23T19:25:53 IST" duration-ms="37134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- swagLabsTC03 -->
-        <test-method is-config="true" signature="preTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll@4d154ccd]" started-at="2021-09-23T18:12:38 IST" name="preTestCondition" finished-at="2021-09-23T18:12:38 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preTestCondition -->
-        <test-method is-config="true" signature="postTestCondition()[pri:0, instance:com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll@4d154ccd]" started-at="2021-09-23T18:13:15 IST" name="postTestCondition" finished-at="2021-09-23T18:13:15 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTestCondition -->
       </class> <!-- com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll -->
     </test> <!-- Android Test -->
   </suite> <!-- Suite -->
