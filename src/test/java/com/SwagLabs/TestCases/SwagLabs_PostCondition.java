@@ -12,10 +12,11 @@ import com.SwagLabs.Utilities.Base;
 
 public class SwagLabs_PostCondition extends Base{
 	
-	@Test
+	@AfterSuite
 	public void SetupExtentReport()
 	{
 		extentReport_flush();
+		appium_Service.stop();
 	}
 
 }

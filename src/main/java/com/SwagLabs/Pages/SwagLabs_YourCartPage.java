@@ -39,6 +39,8 @@ public class SwagLabs_YourCartPage extends Base {
 
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='test-REMOVE']")
 	private List<WebElement> remove;
+	
+	By removeItems = By.xpath("//android.view.ViewGroup[@content-desc='test-REMOVE']");
 
 
 
@@ -63,7 +65,11 @@ public class SwagLabs_YourCartPage extends Base {
 
 	public void removeAll_Checkout() throws InterruptedException, IOException
 	{		
-		elementVisibility("YOUR CART");
+		removeAll(removeItems);
+		elementScrollByText("CHECKOUT");
+		elementClick(checkout, "CHECKOUT");
+		
+		/*elementVisibility("YOUR CART");
 
 		while(elementDispayed("REMOVE"))	
 		{
@@ -76,9 +82,9 @@ public class SwagLabs_YourCartPage extends Base {
 				// TODO: handle exception
 			}
 		}
-		Base.productDetails.clear();
+		productDetails.clear();
 		elementScrollByText("CHECKOUT");
-		elementClick(checkout, "CHECKOUT");
+		elementClick(checkout, "CHECKOUT");*/
 
 	}
 

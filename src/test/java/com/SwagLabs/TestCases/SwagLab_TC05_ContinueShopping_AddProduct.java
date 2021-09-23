@@ -11,6 +11,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.SwagLabs.Pages.SwagLabs_CheckoutComplete;
@@ -20,8 +21,10 @@ import com.SwagLabs.Pages.SwagLabs_LoginPage;
 import com.SwagLabs.Pages.SwagLabs_ProductPage;
 import com.SwagLabs.Pages.SwagLabs_YourCartPage;
 import com.SwagLabs.Utilities.Base;
+import com.SwagLabs.Utilities.DesiredCapabilitiesUtil;
 import com.SwagLabs.Utilities.FileReader;
 import com.SwagLabs.Utilities.PageObjects;
+import com.SwagLabs.Utilities.ThreadLocalInstance;
 import com.aventstack.extentreports.ExtentTest;
 
 import io.appium.java_client.AppiumDriver;
@@ -32,21 +35,30 @@ import io.appium.java_client.android.AndroidElement;
 public class SwagLab_TC05_ContinueShopping_AddProduct extends Base{
 	AppiumDriver<MobileElement> driver;
 	PageObjects pageObjectManager;
+	ThreadLocalInstance threadLocalInstance = new ThreadLocalInstance();
+	DesiredCapabilitiesUtil desiredCapabilitiesUtil = new DesiredCapabilitiesUtil();
 
 	@BeforeMethod
 	public void preTestCondition() throws IOException, InterruptedException
 	{
-		Runtime.getRuntime().exec("taskkill /F /IM node.exe");
+		//Runtime.getRuntime().exec("taskkill /F /IM node.exe");
 		//logger.info("Kill Existing Appium Instance");
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 	}
 	@Test (enabled = true)
-	public void swagLabsTC05() throws IOException, InterruptedException 
+	@Parameters ({"uuid"})
+	public void swagLabsTC05(String uuid) throws IOException, InterruptedException 
 	{
-		extentTest = reports.createTest("Add Single Products, Click Continue Shopping in YourCart Page and Add Another Product, Perform Checkout");
-		appium_Service = initiate_AppiumService();
-		driver=capabilities("swagLagsapp");	
-		pageObjectManager = new PageObjects(driver);	
+		//extentTest = reports.createTest("Add Single Products, Click Continue Shopping in YourCart Page and Add Another Product, Perform Checkout");
+		//appium_Service = initiate_AppiumService();
+		//driver=capabilities("swagLagsapp");	
+		//pageObjectManager = new PageObjects(driver);	
+		
+		threadLocalInstance.setextentTest(reports.createTest("Add Single Products, Click Continue Shopping in YourCart Page and Add Another Product, Perform Checkout"));
+		//threadLocalInstance.setTLDriver(desiredCapabilitiesUtil.intiDriver(uuid)); 
+		pageObjectManager = new PageObjects(threadLocalInstance.getTLDriver());
+		
+		
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();			
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart(FileReader.getInstance().getConfigReader().getProduct_item1());		
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().click_Continue();			
@@ -55,15 +67,16 @@ public class SwagLab_TC05_ContinueShopping_AddProduct extends Base{
 		pageObjectManager.get_SwagLabs_CheckoutInformation_Page().checkout();		
 		pageObjectManager.get_SwagLabs_CheckoutOverView_Page().checkoutoverview_finish();			
 		pageObjectManager.getSwagLabs_CheckoutComplete_Page().checkoutComplete();
-		appium_Service.stop();	
+		pageObjectManager.get_SwagLabs_LoginPage_Page().logout();
+		//appium_Service.stop();	
 
 	}
 
 	@AfterMethod
 	public void postTestCondition()
 	{
-		Base.productDetails.clear();
-		driver=null;
+		//productDetails.clear();
+		//driver=null;
 	}
 
 	

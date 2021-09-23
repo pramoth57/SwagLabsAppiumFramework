@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Emulator Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/4/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>9/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Sep 19 17:49:43 IST 2021</td>
+<td>Started on:</td><td>Thu Sep 23 17:32:12 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>172 seconds (172664 ms)</td>
+<tr><td>Total time:</td><td>343 seconds (343971 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,81 +75,49 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.SwagLabs.TestCases.SwagLab_TC04.swagLabsTC04()'><b>swagLabsTC04</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC04</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Connection refused: no further information
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;USER-PC&apos;, ip: &apos;192.168.42.140&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;15.0.2&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$5(AppiumCommandExecutor.java:251)
-	at java.base/java.util.Optional.orElseGet(Optional.java:362)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:46)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at io.appium.java_client.HasSessionDetails.getSessionDetails(HasSessionDetails.java:39)
-	at io.appium.java_client.HasSessionDetails.getSessionDetail(HasSessionDetails.java:56)
-	at io.appium.java_client.HasSessionDetails.getPlatformName(HasSessionDetails.java:65)
-	at io.appium.java_client.pagefactory.AppiumFieldDecorator.&lt;init&gt;(AppiumFieldDecorator.java:96)
-	at io.appium.java_client.pagefactory.AppiumFieldDecorator.&lt;init&gt;(AppiumFieldDecorator.java:144)
-	at com.SwagLabs.Pages.SwagLabs_LoginPage.&lt;init&gt;(SwagLabs_LoginPage.java:22)
-	at com.SwagLabs.Utilities.PageObjectManager.get_SwagLabs_LoginPage_Page(PageObjectManager.java:45)
-	at com.SwagLabs.TestCases.SwagLab_TC04.swagLabsTC04(SwagLab_TC04.java:49)
+<td title='com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC10()'><b>swagLabsTC10</b><br>Test class: com.SwagLabs.TestCases.SwagLab_ProblemUser_TC<br>Parameters: 5200c70e420a86f5</td>
+<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 51: C:/Users/USER/AppiumFinal/AppiumFramework/Reports/C:\Users\USER\AppiumFinal\AppiumFramework\Reports/extent-media.0/1632398875727.png
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMediaFileLocal(LocalMediaStorageHandler.java:77)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMedia(LocalMediaStorageHandler.java:29)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.autoCreateRelativePathMedia(BasicFileReporter.java:260)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(BasicFileReporter.java:243)
+	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
+	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
+	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
+	at com.SwagLabs.Utilities.Base.elementScrollByText(Base.java:332)
+	at com.SwagLabs.Pages.SwagLabs_LoginPage.login_problemUser(SwagLabs_LoginPage.java:78)
+	at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC10(SwagLab_ProblemUser_TC.java:81)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	... 35 more
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace269765828", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace269765828'><pre>org.openqa.selenium.WebDriverException: Connection refused: no further information
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;USER-PC&apos;, ip: &apos;192.168.42.140&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;15.0.2&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$5(AppiumCommandExecutor.java:251)
-	at java.base/java.util.Optional.orElseGet(Optional.java:362)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:46)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at io.appium.java_client.HasSessionDetails.getSessionDetails(HasSessionDetails.java:39)
-	at io.appium.java_client.HasSessionDetails.getSessionDetail(HasSessionDetails.java:56)
-	at io.appium.java_client.HasSessionDetails.getPlatformName(HasSessionDetails.java:65)
-	at io.appium.java_client.pagefactory.AppiumFieldDecorator.&lt;init&gt;(AppiumFieldDecorator.java:96)
-	at io.appium.java_client.pagefactory.AppiumFieldDecorator.&lt;init&gt;(AppiumFieldDecorator.java:144)
-	at com.SwagLabs.Pages.SwagLabs_LoginPage.&lt;init&gt;(SwagLabs_LoginPage.java:22)
-	at com.SwagLabs.Utilities.PageObjectManager.get_SwagLabs_LoginPage_Page(PageObjectManager.java:45)
-	at com.SwagLabs.TestCases.SwagLab_TC04.swagLabsTC04(SwagLab_TC04.java:49)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1546221865", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1546221865'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 51: C:/Users/USER/AppiumFinal/AppiumFramework/Reports/C:\Users\USER\AppiumFinal\AppiumFramework\Reports/extent-media.0/1632398875727.png
+	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
+	at java.base/java.nio.file.Path.of(Path.java:147)
+	at java.base/java.nio.file.Paths.get(Paths.java:69)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMediaFileLocal(LocalMediaStorageHandler.java:77)
+	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMedia(LocalMediaStorageHandler.java:29)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.autoCreateRelativePathMedia(BasicFileReporter.java:260)
+	at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(BasicFileReporter.java:243)
+	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
+	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
+	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
+	at com.SwagLabs.Utilities.Base.elementScrollByText(Base.java:332)
+	at com.SwagLabs.Pages.SwagLabs_LoginPage.login_problemUser(SwagLabs_LoginPage.java:78)
+	at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC10(SwagLab_ProblemUser_TC.java:81)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -173,115 +141,21 @@ Driver info: driver.version: AndroidDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	... 35 more
 </pre></div></td>
-<td>13</td>
-<td>com.SwagLabs.TestCases.SwagLab_TC04@d9345cd</td></tr>
+<td>3</td>
+<td>com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@45099dd3</td></tr>
 <tr>
-<td title='com.SwagLabs.TestCases.SwagLab_TC03.swagLabsTC03()'><b>swagLabsTC03</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC03</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: Connection refused: no further information
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;USER-PC&apos;, ip: &apos;192.168.42.140&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;15.0.2&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$5(AppiumCommandExecutor.java:251)
-	at java.base/java.util.Optional.orElseGet(Optional.java:362)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:46)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at io.appium.java_client.HasSessionDetails.getSessionDetails(HasSessionDetails.java:39)
-	at io.appium.java_client.HasSessionDetails.getSessionDetail(HasSessionDetails.java:56)
-	at io.appium.java_client.HasSessionDetails.getPlatformName(HasSessionDetails.java:65)
-	at io.appium.java_client.pagefactory.AppiumFieldDecorator.&lt;init&gt;(AppiumFieldDecorator.java:96)
-	at io.appium.java_client.pagefactory.AppiumFieldDecorator.&lt;init&gt;(AppiumFieldDecorator.java:144)
-	at com.SwagLabs.Pages.SwagLabs_LoginPage.&lt;init&gt;(SwagLabs_LoginPage.java:22)
-	at com.SwagLabs.Utilities.PageObjectManager.get_SwagLabs_LoginPage_Page(PageObjectManager.java:45)
-	at com.SwagLabs.TestCases.SwagLab_TC03.swagLabsTC03(SwagLab_TC03.java:48)
+<td title='com.SwagLabs.TestCases.SwagLabs_PostCondition.SetupExtentReport()'><b>SetupExtentReport</b><br>Test class: com.SwagLabs.TestCases.SwagLabs_PostCondition</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;io.appium.java_client.service.local.AppiumDriverLocalService.stop()&quot; because &quot;this.appium_Service&quot; is null
+	at com.SwagLabs.TestCases.SwagLabs_PostCondition.SetupExtentReport(SwagLabs_PostCondition.java:19)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	... 35 more
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1887228558", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1887228558'><pre>org.openqa.selenium.WebDriverException: Connection refused: no further information
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;USER-PC&apos;, ip: &apos;192.168.42.140&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;15.0.2&apos;
-Driver info: driver.version: AndroidDriver
-	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$5(AppiumCommandExecutor.java:251)
-	at java.base/java.util.Optional.orElseGet(Optional.java:362)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:46)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at io.appium.java_client.HasSessionDetails.getSessionDetails(HasSessionDetails.java:39)
-	at io.appium.java_client.HasSessionDetails.getSessionDetail(HasSessionDetails.java:56)
-	at io.appium.java_client.HasSessionDetails.getPlatformName(HasSessionDetails.java:65)
-	at io.appium.java_client.pagefactory.AppiumFieldDecorator.&lt;init&gt;(AppiumFieldDecorator.java:96)
-	at io.appium.java_client.pagefactory.AppiumFieldDecorator.&lt;init&gt;(AppiumFieldDecorator.java:144)
-	at com.SwagLabs.Pages.SwagLabs_LoginPage.&lt;init&gt;(SwagLabs_LoginPage.java:22)
-	at com.SwagLabs.Utilities.PageObjectManager.get_SwagLabs_LoginPage_Page(PageObjectManager.java:45)
-	at com.SwagLabs.TestCases.SwagLab_TC03.swagLabsTC03(SwagLab_TC03.java:48)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1168824222", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1168824222'><pre>java.lang.NullPointerException: Cannot invoke &quot;io.appium.java_client.service.local.AppiumDriverLocalService.stop()&quot; because &quot;this.appium_Service&quot; is null
+	at com.SwagLabs.TestCases.SwagLabs_PostCondition.SetupExtentReport(SwagLabs_PostCondition.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -305,42 +179,12 @@ Driver info: driver.version: AndroidDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:155)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	... 35 more
 </pre></div></td>
-<td>14</td>
-<td>com.SwagLabs.TestCases.SwagLab_TC03@428640fa</td></tr>
+<td>0</td>
+<td>com.SwagLabs.TestCases.SwagLabs_PostCondition@13e344d</td></tr>
 <tr>
-<td title='com.SwagLabs.TestCases.SwagLab_TC01.swagLabsTC02()'><b>swagLabsTC02</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC01</td>
-<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1632054022452.png
+<td title='com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC09()'><b>swagLabsTC09</b><br>Test class: com.SwagLabs.TestCases.SwagLab_ProblemUser_TC<br>Parameters: 5200c70e420a86f5</td>
+<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 51: C:/Users/USER/AppiumFinal/AppiumFramework/Reports/C:\Users\USER\AppiumFinal\AppiumFramework\Reports/extent-media.0/1632398869516.png
 	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
 	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
 	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
@@ -355,16 +199,16 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
 	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
 	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
-	at com.SwagLabs.Utilities.Base.elementScrollByText(Base.java:244)
-	at com.SwagLabs.Pages.SwagLabs_LoginPage.login_StandardUser(SwagLabs_LoginPage.java:41)
-	at com.SwagLabs.TestCases.SwagLab_TC01.swagLabsTC02(SwagLab_TC01.java:50)
+	at com.SwagLabs.Utilities.Base.yourCart_ProductValidation(Base.java:618)
+	at com.SwagLabs.Pages.SwagLabs_YourCartPage.checkout(SwagLabs_YourCartPage.java:51)
+	at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC09(SwagLab_ProblemUser_TC.java:60)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace232859365", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace232859365'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1632054022452.png
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1659900997", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1659900997'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 51: C:/Users/USER/AppiumFinal/AppiumFramework/Reports/C:\Users\USER\AppiumFinal\AppiumFramework\Reports/extent-media.0/1632398869516.png
 	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
 	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
 	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
@@ -379,9 +223,9 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
 	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
 	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
-	at com.SwagLabs.Utilities.Base.elementScrollByText(Base.java:244)
-	at com.SwagLabs.Pages.SwagLabs_LoginPage.login_StandardUser(SwagLabs_LoginPage.java:41)
-	at com.SwagLabs.TestCases.SwagLab_TC01.swagLabsTC02(SwagLab_TC01.java:50)
+	at com.SwagLabs.Utilities.Base.yourCart_ProductValidation(Base.java:618)
+	at com.SwagLabs.Pages.SwagLabs_YourCartPage.checkout(SwagLabs_YourCartPage.java:51)
+	at com.SwagLabs.TestCases.SwagLab_ProblemUser_TC.swagLabsTC09(SwagLab_ProblemUser_TC.java:60)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -406,78 +250,8 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
 </pre></div></td>
-<td>35</td>
-<td>com.SwagLabs.TestCases.SwagLab_TC01@ffaa6af</td></tr>
-<tr>
-<td title='com.SwagLabs.TestCases.SwagLab_TC02.swagLabsTC02()'><b>swagLabsTC02</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC02</td>
-<td><div><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1632054058784.png
-	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
-	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
-	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
-	at java.base/java.nio.file.Path.of(Path.java:147)
-	at java.base/java.nio.file.Paths.get(Paths.java:69)
-	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMediaFileLocal(LocalMediaStorageHandler.java:77)
-	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMedia(LocalMediaStorageHandler.java:29)
-	at com.aventstack.extentreports.reporter.BasicFileReporter.autoCreateRelativePathMedia(BasicFileReporter.java:260)
-	at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(BasicFileReporter.java:243)
-	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
-	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
-	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
-	at com.SwagLabs.Utilities.Base.elementScrollByText(Base.java:244)
-	at com.SwagLabs.Pages.SwagLabs_LoginPage.login_StandardUser(SwagLabs_LoginPage.java:41)
-	at com.SwagLabs.TestCases.SwagLab_TC02.swagLabsTC02(SwagLab_TC02.java:49)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace338717048", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace338717048'><pre>java.nio.file.InvalidPathException: Illegal char &lt;:&gt; at index 91: C:/Users/USER/git/SwagLabsAppiumFramework/SwagLabsAppiumFramework/AppiumFramework/Reports/C:\Users\USER\git\SwagLabsAppiumFramework\SwagLabsAppiumFramework\AppiumFramework\Reports/extent-media.0/1632054058784.png
-	at java.base/sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
-	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
-	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
-	at java.base/java.nio.file.Path.of(Path.java:147)
-	at java.base/java.nio.file.Paths.get(Paths.java:69)
-	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMediaFileLocal(LocalMediaStorageHandler.java:77)
-	at com.aventstack.extentreports.mediastorage.LocalMediaStorageHandler.storeMedia(LocalMediaStorageHandler.java:29)
-	at com.aventstack.extentreports.reporter.BasicFileReporter.autoCreateRelativePathMedia(BasicFileReporter.java:260)
-	at com.aventstack.extentreports.reporter.BasicFileReporter.onScreenCaptureAdded(BasicFileReporter.java:243)
-	at com.aventstack.extentreports.ExtentObservable.addScreenCapture(ExtentObservable.java:374)
-	at com.aventstack.extentreports.ExtentTest.addLog(ExtentTest.java:363)
-	at com.aventstack.extentreports.ExtentTest.log(ExtentTest.java:308)
-	at com.SwagLabs.Utilities.Base.elementScrollByText(Base.java:244)
-	at com.SwagLabs.Pages.SwagLabs_LoginPage.login_StandardUser(SwagLabs_LoginPage.java:41)
-	at com.SwagLabs.TestCases.SwagLab_TC02.swagLabsTC02(SwagLab_TC02.java:49)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-</pre></div></td>
-<td>33</td>
-<td>com.SwagLabs.TestCases.SwagLab_TC02@4c1909a3</td></tr>
+<td>15</td>
+<td>com.SwagLabs.TestCases.SwagLab_ProblemUser_TC@45099dd3</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -487,20 +261,50 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.SwagLabs.TestCases.SwagLab_TC05.swagLabsTC05()'><b>swagLabsTC05</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC05</td>
+<td title='com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout.swagLabsTC02()'><b>swagLabsTC02</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout<br>Parameters: 5200c70e420a86f5</td>
 <td></td>
-<td>60</td>
-<td>com.SwagLabs.TestCases.SwagLab_TC05@2d710f1a</td></tr>
+<td>33</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout@1e0b4072</td></tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage.swagLabsTC08()'><b>swagLabsTC08</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage<br>Parameters: 5200c70e420a86f5</td>
+<td></td>
+<td>51</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage@6340e5f0</td></tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview.swagLabsTC07()'><b>swagLabsTC07</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview<br>Parameters: 5200c70e420a86f5</td>
+<td></td>
+<td>29</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview@2794eab6</td></tr>
 <tr>
 <td title='com.SwagLabs.TestCases.SwagLabs_PreCondition.SetupExtentReport()'><b>SetupExtentReport</b><br>Test class: com.SwagLabs.TestCases.SwagLabs_PreCondition</td>
 <td></td>
-<td>0</td>
-<td>com.SwagLabs.TestCases.SwagLabs_PreCondition@74751b3</td></tr>
+<td>2</td>
+<td>com.SwagLabs.TestCases.SwagLabs_PreCondition@12aba8be</td></tr>
 <tr>
-<td title='com.SwagLabs.TestCases.SwagLabs_PostCondition.SetupExtentReport()'><b>SetupExtentReport</b><br>Test class: com.SwagLabs.TestCases.SwagLabs_PostCondition</td>
+<td title='com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct.swagLabsTC05()'><b>swagLabsTC05</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct<br>Parameters: 5200c70e420a86f5</td>
 <td></td>
-<td>0</td>
-<td>com.SwagLabs.TestCases.SwagLabs_PostCondition@29215f06</td></tr>
+<td>47</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct@4b45a2f5</td></tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll.swagLabsTC03()'><b>swagLabsTC03</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll<br>Parameters: 5200c70e420a86f5</td>
+<td></td>
+<td>37</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll@791f145a</td></tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne.swagLabsTC04()'><b>swagLabsTC04</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne<br>Parameters: 5200c70e420a86f5</td>
+<td></td>
+<td>35</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne@38cee291</td></tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo.swagLabsTC06()'><b>swagLabsTC06</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo<br>Parameters: 5200c70e420a86f5</td>
+<td></td>
+<td>24</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo@f09733f</td></tr>
+<tr>
+<td title='com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout.swagLabsTC01()'><b>swagLabsTC01</b><br>Test class: com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout<br>Parameters: 5200c70e420a86f5</td>
+<td></td>
+<td>56</td>
+<td>com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout@72e5a8e</td></tr>
 </table><p>
 </body>
 </html>

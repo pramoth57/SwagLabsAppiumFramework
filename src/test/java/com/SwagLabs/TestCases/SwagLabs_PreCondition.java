@@ -12,10 +12,13 @@ import com.SwagLabs.Utilities.Base;
 
 public class SwagLabs_PreCondition extends Base{
 	
-	@Test
-	public void SetupExtentReport()
+	@BeforeSuite
+	public void SetupExtentReport() throws IOException
 	{
+		Runtime.getRuntime().exec("taskkill /F /IM node.exe");
+		appium_Service = initiate_AppiumService();
 		intitate_extentReport();
+			
 	}
 
 }

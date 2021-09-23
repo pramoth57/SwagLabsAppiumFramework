@@ -5,13 +5,16 @@ import static org.testng.Assert.assertTrue;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.net.MalformedURLException;
 import java.net.ServerSocket;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -24,6 +27,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -38,6 +47,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.functions.ExpectedCondition;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -45,20 +55,30 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 
 public class Base
 {
-	public static AppiumDriverLocalService appium_Service;
-	//public static AppiumDriver<MobileElement>  driver;
-	public static  AppiumDriver<MobileElement> driver;
-	public static ExtentTest extentTest;
-	public static HashMap<String, String> productDetails = new HashMap<String, String>();
+	public  AppiumDriverLocalService appium_Service;
+	public  AppiumDriver<MobileElement>  driver;
+	protected ThreadLocal<AppiumDriver<MobileElement>> threaddriver = new ThreadLocal<>();
+	ThreadLocalInstance threadLocalInstance = new ThreadLocalInstance();
+	//public AppiumDriver<MobileElement> driver;
+	//public static ExtentTest extentTest;
+	//public static ExtentTest extentTest;	
+	//private static ThreadLocal<ExtentTest> extent_test = new ThreadLocal<ExtentTest>();
+	public static String uuidVal;
+	public HashMap<String, String> productDetails = new HashMap<String, String>();
 	public static ExtentHtmlReporter htmlreporter;
 	public static ExtentReports reports;
+	ThreadLocalInstance threadLocalDriver = new ThreadLocalInstance();
+	protected WebDriverWait wait;
 
-
-
+	
+	//@BeforeTest
+	
+	
+		
 	//Initiate Extent Report instance
 	public static void intitate_extentReport()
 	{
-		htmlreporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"\\Reports\\SwagLabsTesExecutiontReport.html");
+		htmlreporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"\\Reports\\SwagLabsTesExecutiontReport_"+System.currentTimeMillis()+".html");
 		htmlreporter.config().setEncoding("utf-8");
 		htmlreporter.config().setDocumentTitle("SwagLabs Automation Reports");
 		htmlreporter.config().setReportName("Swaglabs Automtion Execution reports");
@@ -83,6 +103,8 @@ public class Base
 	}
 
 
+	
+	
 	// Initiate Appium Server
 	public AppiumDriverLocalService initiate_AppiumService()
 	{
@@ -95,11 +117,12 @@ public class Base
 				appium_Service.start();
 			}
 
-			extentTest.log(Status.PASS, "Appium Server Started Successfully");
+			//extentTest.log(Status.PASS, "Appium Server Started Successfully");
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			extentTest.log(Status.FAIL, "Appium Server Not Started Successfully");
+			//System.exit(0);
+			//extentTest.log(Status.FAIL, "Appium Server Not Started Successfully");
 		}
 
 		return appium_Service;
@@ -144,7 +167,7 @@ public class Base
 		Thread.sleep(6000);
 	}*/
 	//Initiate Android Driver with corresponding Capabilities
-	public static  AppiumDriver<MobileElement> capabilities(String appName) throws IOException, InterruptedException
+	public AppiumDriver<MobileElement> capabilities(String appName) throws IOException, InterruptedException
 	{
 
 		//String driverDevice = driverDevice;
@@ -171,11 +194,11 @@ public class Base
 			try 
 			{
 				startEmulator();
-				extentTest.log(Status.PASS, "Emulator Started Successfully");
+				threadLocalInstance.getextentTest().log(Status.PASS, "Emulator Started Successfully");
 			}
 			catch (Exception e) 
 			{
-				extentTest.log(Status.FAIL, "Emulator not Started Successfully");
+				threadLocalInstance.getextentTest().log(Status.FAIL, "Emulator not Started Successfully");
 				// TODO: handle exception
 			}
 		}
@@ -207,17 +230,15 @@ public class Base
 			try 
 			{
 				//driver = new AndroidDriver<MobileElement>(new URL("http://hub.browserstack.com/wd/hub"), caps);
-
-				driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-				//System.out.println(getLogCat_logss(driver.manage().logs().get("logcat")));		
+				driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);					
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				extentTest.log(Status.PASS, "Android Driver Started Successfully");
+				threadLocalInstance.getextentTest().log(Status.PASS, "Android Driver Started Successfully");
 
 			}
 			catch (Exception e) 
 			{
 				// TODO: handle exception
-				extentTest.log(Status.FAIL, "Android Drive not Started Successfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
+				threadLocalInstance.getextentTest().log(Status.FAIL, "Android Drive not Started Successfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
 
 			}
 		}
@@ -237,13 +258,13 @@ public class Base
 
 				driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				extentTest.log(Status.PASS, "IOS Driver Started Successfully");
+				threadLocalInstance.getextentTest().log(Status.PASS, "IOS Driver Started Successfully");
 
 			}
 			catch (Exception e) 
 			{
 				// TODO: handle exception
-				extentTest.log(Status.FAIL, "IOS Drive not Started Successfully");
+				threadLocalInstance.getextentTest().log(Status.FAIL, "IOS Drive not Started Successfully");
 
 			}
 		}
@@ -280,35 +301,58 @@ public class Base
 	}
 
 	//Capture Screen Shot
-	public static String getScreenshot() throws IOException
+	public String getScreenshot() throws IOException
 	{
-		File scrfile=	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		File scrfile=	((TakesScreenshot)threadLocalInstance.getTLDriver()).getScreenshotAs(OutputType.FILE);
 		String path = System.getProperty("user.dir")+"\\ScreenShot\\"+System.currentTimeMillis()+".png";
 		FileUtils.copyFile(scrfile,new File(path));
 		return path;
 
 	}
+	
+	
+	
+	
+	public boolean waitforElementVisible(WebElement oElement) throws IOException
+	{
+		wait = new WebDriverWait(threadLocalDriver.getTLDriver(), 5);
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(oElement));
+		}
+		catch (Exception e) {
+			return false;
+		}
+		
+		return true;
+
+	}
+	
 	//Scroll Element into View using Visible Text
-	public static void elementScrollByText(String oText) throws IOException
+	public void elementScrollByText(String oText) throws IOException
 	{
 		try
-		{
-			((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+oText+"\"));");
-			extentTest.log(Status.PASS, oText+" Text Scrolled Into View Successfully");
+		{	
+			((FindsByAndroidUIAutomator<MobileElement>) threadLocalDriver.getTLDriver()).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+oText+"\"));");
+			threadLocalInstance.getextentTest().log(Status.PASS, oText+" Text Scrolled Into View Successfully");
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, oText+" Text Scrolled Not Into View Successfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			threadLocalInstance.getextentTest().log(Status.FAIL, oText+" Text Scrolled Not Into View Successfully \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
+	
+	
+
+
+	
 
 	// Verify Element displayed in View
-	public static boolean elementDispayed(String oText)
+	public boolean elementDispayed(String oText)
 	{
 		try
-		{
-			driver.findElement(By.xpath("//*[@text='"+oText+"']")).isDisplayed();
-			extentTest.log(Status.PASS, oText+" is Displayed In View");
+		{	waitforElementVisible(threadLocalDriver.getTLDriver().findElement(By.xpath("//*[@text='"+oText+"']")));
+		threadLocalDriver.getTLDriver().findElement(By.xpath("//*[@text='"+oText+"']")).isDisplayed();
+		threadLocalInstance.getextentTest().log(Status.PASS, oText+" is Displayed In View");
 			return true;
 		}
 		catch (Exception e) 
@@ -320,71 +364,74 @@ public class Base
 	}
 
 	//Scroll Element into View using Description and Visible Text
-	public static void elementScrollBy_DescriptionAndText(String oDescription, String oText) throws IOException
+	public void elementScrollBy_DescriptionAndText(String oDescription, String oText) throws IOException
 	{
 		try
 		{
-			((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\""+oDescription+"\")).scrollIntoView(text(\""+oText+"\"));");
-			extentTest.log(Status.PASS, oText+" Text Scrolled Into View Successfully");
+			((FindsByAndroidUIAutomator<MobileElement>) threadLocalDriver.getTLDriver()).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\""+oDescription+"\")).scrollIntoView(text(\""+oText+"\"));");
+			threadLocalInstance.getextentTest().log(Status.PASS, oText+" Text Scrolled Into View Successfully");
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, oText+" Text Scrolled Not Into View Successfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			threadLocalInstance.getextentTest().log(Status.FAIL, oText+" Text Scrolled Not Into View Successfully \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
-	public static void elementVisibility(String oElementName) throws IOException
+	public void elementVisibility(String oElementName) throws IOException
 	{
 		try
-		{
-			boolean status = driver.findElement(MobileBy.xpath("//*[@text='"+oElementName+"']")).isDisplayed();
+		{	Thread.sleep(3000);
+			waitforElementVisible(threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@text='"+oElementName+"']")));
+			boolean status = threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@text='"+oElementName+"']")).isDisplayed();
 			if(status)
 			{	
-				extentTest.log(Status.PASS, oElementName+" Page Is Visible");
+				threadLocalInstance.getextentTest().log(Status.PASS, oElementName+" Page Is Visible");
 			}
 			else
 			{
-				extentTest.log(Status.PASS, oElementName+" Page not Is Visible"+getLogCat_logss(driver.manage().logs().get("logcat")));
+				threadLocalInstance.getextentTest().log(Status.PASS, oElementName+" Page not Is Visible"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")));
 			}
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, oElementName+" Page Is not Visible"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			threadLocalInstance.getextentTest().log(Status.FAIL, oElementName+" Page Is not Visible"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
 	//Perform Click Action on WebElement
-	public static void elementClick(WebElement oElement, String oElementName) throws IOException
+	public void elementClick(WebElement oElement, String oElementName) throws IOException
 	{
 		try
 		{
-
+			waitforElementVisible(oElement);
 			oElement.click();
-			extentTest.log(Status.PASS, oElementName+" Clicked Successfully");
+			threadLocalInstance.getextentTest().log(Status.PASS, oElementName+" Clicked Successfully");
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, oElementName+" Click Unsuccessfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			threadLocalInstance.getextentTest().log(Status.FAIL, oElementName+" Click Unsuccessfully \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
+	
+	
 	//Perform Send Keys Action on Webelement
-	public static void elementSendKeys(WebElement oElement, String oElementName, String oData) throws IOException
+	public void elementSendKeys(WebElement oElement, String oElementName, String oData) throws IOException
 	{
 		try
 		{
-
+			waitforElementVisible(oElement);
 			oElement.sendKeys(oData);;
-			extentTest.log(Status.PASS, "Data *"+oData+"* Entered Successfully for "+oElementName+" Field");
+			threadLocalInstance.getextentTest().log(Status.PASS, "Data *"+oData+"* Entered Successfully for "+oElementName+" Field");
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, "Data *"+oData+"* Not Entered Successfully for "+oElementName+" Field \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			threadLocalInstance.getextentTest().log(Status.FAIL, "Data *"+oData+"* Not Entered Successfully for "+oElementName+" Field \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
 	//Add Product in Product Home Page Using Product Name
-	public static void addProduct(String oProductList) throws IOException
+	public void addProduct(String oProductList) throws IOException
 	{
 		String productAmount = null;
 		String productname = null;
@@ -397,26 +444,29 @@ public class Base
 				System.out.println(product);
 				//driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-PRODUCTS\")).scrollIntoView(text(\""+product+"\"));");
 				elementScrollBy_DescriptionAndText("test-PRODUCTS", product);
-				extentTest.log(Status.PASS, product+" Scrolled into View");
+				threadLocalInstance.getextentTest().log(Status.PASS, product+" Scrolled into View");
 				productname = product;
-				productAmount = driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@content-desc='test-Price']")).getAttribute("text");
-				Base.productDetails.put(product, productAmount);		
-				extentTest.log(Status.PASS, product+" Amount "+productAmount+" retrived Successfully");
-				driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@text='ADD TO CART']")).click();
+				productAmount = threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@content-desc='test-Price']")).getAttribute("text");
+				productDetails.put(product, productAmount);		
+				//threadLocalInstance.setproductDetails(productDetails)
+				threadLocalInstance.getextentTest().log(Status.PASS, product+" Amount "+productAmount+" retrived Successfully");
+				threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@text='ADD TO CART']")).click();
 				//assertTrue(driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@text='REMOVE']")).isDisplayed());
-				extentTest.log(Status.PASS, product+" Added to Cart Successfully");
+				threadLocalInstance.getextentTest().log(Status.PASS, product+" Added to Cart Successfully");
 
 			}
+			
+			threadLocalInstance.setproductDetails(productDetails);
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, "Unable to Add "+productname+" Product To Cart \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			threadLocalInstance.getextentTest().log(Status.FAIL, "Unable to Add "+productname+" Product To Cart \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 			//assertTrue(false);
 		}
 	}
 
 	//Validate Product informaion in Your and Invertory Page
-	public static void validateProductInfo(String oProductList) throws IOException
+	public void validateProductInfo(String oProductList) throws IOException
 	{
 		String productAmount = null;
 		String productname = null;
@@ -431,40 +481,42 @@ public class Base
 			{	
 				System.out.println(product);
 				elementScrollBy_DescriptionAndText("test-PRODUCTS", product);
-				extentTest.log(Status.PASS, product+" Scrolled into View");
+				threadLocalInstance.getextentTest().log(Status.PASS, product+" Scrolled into View");
 				productname = product;
-				productAmount = driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@content-desc='test-Price']")).getAttribute("text");
-				extentTest.log(Status.PASS, product+" Amount "+productAmount+" retrived Successfully");
-				Base.productDetails.put(product, productAmount);							
-				driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']")).click();
-				inventoryproductname=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Description']/android.widget.TextView")).getAttribute("text");
+				productAmount = threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@content-desc='test-Price']")).getAttribute("text");
+				threadLocalInstance.getextentTest().log(Status.PASS, product+" Amount "+productAmount+" retrived Successfully");
+				productDetails.put(product, productAmount);							
+				threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']")).click();
+				Thread.sleep(3000);
+				inventoryproductname=threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@content-desc='test-Description']/android.widget.TextView")).getAttribute("text");
 				if(productname.equals(inventoryproductname))
 				{
-					extentTest.log(Status.PASS, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
+					threadLocalInstance.getextentTest().log(Status.PASS, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
 
 				}
 				else 
 				{
-					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
+					threadLocalInstance.getextentTest().log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page \n");//+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")));
 
 				}
 
 				elementScrollBy_DescriptionAndText("test-Inventory item page", "ADD TO CART");							
-				inventoryproductAmount=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
+				inventoryproductAmount=threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
 				if(productAmount.equals(inventoryproductAmount))
 				{
-					extentTest.log(Status.PASS, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
+					threadLocalInstance.getextentTest().log(Status.PASS, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
 
 				}
 				else 
 				{
-					extentTest.log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
+					threadLocalInstance.getextentTest().log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page \n");//+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")));
 				}
 
-				driver.findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
+				threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
 
 
 			}
+			threadLocalInstance.setproductDetails(productDetails);
 		}
 		catch (Exception e) 
 		{
@@ -474,7 +526,7 @@ public class Base
 	}
 
 	//Validate Product informaion in Your and Invertory Page and Add the Product To Cart from Inventory Page 
-	public static void validateProductInfo_addCart(String oProductList) throws IOException
+	public void validateProductInfo_addCart(String oProductList) throws IOException
 	{
 		String productAmount = null;
 		String productname = null;
@@ -489,40 +541,42 @@ public class Base
 			{	
 				System.out.println(product);
 				elementScrollBy_DescriptionAndText("test-PRODUCTS", product);
-				extentTest.log(Status.PASS, product+" Scrolled into View");
+				//threadLocalInstance.getextentTest().log(Status.PASS, product+" Scrolled into View");
 				productname = product;
-				productAmount = driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@content-desc='test-Price']")).getAttribute("text");
-				extentTest.log(Status.PASS, product+" Amount "+productAmount+" retrived Successfully");
-				Base.productDetails.put(product, productAmount);							
-				driver.findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']")).click();
-				inventoryproductname=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Description']/android.widget.TextView")).getAttribute("text");
+				productAmount = threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']/..//*[@content-desc='test-Price']")).getAttribute("text");
+				threadLocalInstance.getextentTest().log(Status.PASS, product+" Amount "+productAmount+" retrived Successfully");
+				productDetails.put(product, productAmount);							
+				threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//android.widget.TextView[@text='"+product+"']")).click();
+				Thread.sleep(3000);
+				inventoryproductname=threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@content-desc='test-Description']/android.widget.TextView")).getAttribute("text");
 				if(productname.equals(inventoryproductname))
 				{
-					extentTest.log(Status.PASS, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
+					threadLocalInstance.getextentTest().log(Status.PASS, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page ");
 
 				}
 				else 
 				{
-					extentTest.log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
+					threadLocalInstance.getextentTest().log(Status.FAIL, productname+" Product Title in Your Cart Page is displayed as "+inventoryproductname+" in Inventory Page \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")));
 
 				}
 
 				elementScrollBy_DescriptionAndText("test-Inventory item page", "ADD TO CART");
-				inventoryproductAmount=driver.findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
+				inventoryproductAmount=threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@content-desc='test-Price']")).getAttribute("text");
 				if(productAmount.equals(inventoryproductAmount))
 				{
-					extentTest.log(Status.PASS, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
+					threadLocalInstance.getextentTest().log(Status.PASS, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page ");
 
 				}
 				else 
 				{
-					extentTest.log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
+					threadLocalInstance.getextentTest().log(Status.FAIL, productname+" Product Amount "+productAmount+" in Your Cart Page is displayed as "+inventoryproductAmount+" in Inventory Page \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")));
 				}
-				driver.findElement(By.xpath("//*[@text='ADD TO CART']")).click();
-				driver.findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
+				threadLocalDriver.getTLDriver().findElement(By.xpath("//*[@text='ADD TO CART']")).click();
+				threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@text='BACK TO PRODUCTS']")).click();
 
 
 			}
+			threadLocalInstance.setproductDetails(productDetails);
 		}
 		catch (Exception e) 
 		{
@@ -531,54 +585,75 @@ public class Base
 		}
 	}
 
+	public void removeAll (By oLocator) throws IOException, InterruptedException
+	{
+		elementVisibility("YOUR CART");
+
+		while(elementDispayed("REMOVE"))	
+		{
+			Thread.sleep(2000);
+			try
+			{
+				threadLocalInstance.getTLDriver().findElements(oLocator).get(0).click();
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		threadLocalInstance.getproductDetails().clear();
+		
+	}
+	
 
 	//Verify Product Added from Product Home Page is Visible in Your Cart Page
-	public static void yourCart_ProductValidation() throws IOException
+	public void yourCart_ProductValidation() throws IOException
 	{
 		String productName = null;
 		try
 		{
-
-			for(Map.Entry m : Base.productDetails.entrySet())
+			System.out.println(threadLocalInstance.getproductDetails());
+			for(Map.Entry m : threadLocalInstance.getproductDetails().entrySet())
 			{  
 				productName=m.getKey().toString();
 				Thread.sleep(2000);
 				elementScrollBy_DescriptionAndText("test-Cart Content", productName);
-				extentTest.log(Status.PASS, m.getKey().toString()+"Added Product is available");
+				threadLocalInstance.getextentTest().log(Status.PASS, m.getKey().toString()+"Added Product is available");
 
 			} 
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, "Added Product "+productName+" is not available in YourCart \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			threadLocalInstance.getextentTest().log(Status.FAIL, "Added Product "+productName+" is not available in YourCart \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
 	//Verify Product Added from Product Home Page is Visible in Checkout OverView Page
 	//Validate Cart Amount Total With Item Total
-	public static void checkoutOverView_ProductValidation() throws IOException
+	public void checkoutOverView_ProductValidation() throws IOException
 	{
 		try
 		{
 			double productAmt= 0.0;
 
-			for(Map.Entry m : Base.productDetails.entrySet())
+			//for(Map.Entry m : productDetails.entrySet())
+			for(Map.Entry m : threadLocalInstance.getproductDetails().entrySet())
 			{ 
-
+				System.out.println(m.getKey().toString());
 
 				elementScrollBy_DescriptionAndText("test-CHECKOUT: OVERVIEW", m.getKey().toString());
-				extentTest.log(Status.PASS, m.getKey().toString()+"Added Product is available");
-				assertTrue(driver.findElement(MobileBy.xpath("//*[@text='"+m.getKey().toString()+"']/../..//*[@text='"+m.getValue().toString()+"']")).isDisplayed());			
+				threadLocalInstance.getextentTest().log(Status.PASS, m.getKey().toString()+"Added Product is available");
+				assertTrue(threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@text='"+m.getKey().toString()+"']/../..//*[@text='"+m.getValue().toString()+"']")).isDisplayed());			
 				productAmt = productAmt + getAmount(m.getValue().toString());
 			} 		
 
-			((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(textStartsWith(\"Item total:\"));");	
+			((FindsByAndroidUIAutomator<MobileElement>) threadLocalDriver.getTLDriver()).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\")).scrollIntoView(textStartsWith(\"Item total:\"));");	
 			//elementScrollBy_DescriptionAndText("test-CHECKOUT: OVERVIEW", "ADD TO CART");
-			double producttotal = getAmount(((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiSelector().textStartsWith(\"Item total:\");").getText().split(":")[1].trim());
+			double producttotal = getAmount(((FindsByAndroidUIAutomator<MobileElement>) threadLocalDriver.getTLDriver()).findElementByAndroidUIAutomator("new UiSelector().textStartsWith(\"Item total:\");").getText().split(":")[1].trim());
 
 			if(producttotal==0)
 			{
-				extentTest.log(Status.FAIL, "Cart Total amount is **$0.00**  \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+				threadLocalInstance.getextentTest().log(Status.FAIL, "Cart Total amount is **$0.00**  \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+				//threadLocalInstance.getextentTest().log(Status.FAIL, "Cart Total amount is **$0.00**  \n",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 				//extentTest.log(Status.FAIL, "Added Product is not available in Checkout Overview", MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 				assertTrue(false);
 			}
@@ -586,11 +661,11 @@ public class Base
 			{
 				if(productAmt==producttotal)
 				{
-					extentTest.log(Status.PASS, "Cart Total "+productAmt+" and Item Total "+producttotal+" are Equal");
+					threadLocalInstance.getextentTest().log(Status.PASS, "Cart Total "+productAmt+" and Item Total "+producttotal+" are Equal");
 				}
 				else
 				{
-					extentTest.log(Status.FAIL, "Cart Total "+productAmt+" and Item Total "+producttotal+" are Not Equal \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+					threadLocalInstance.getextentTest().log(Status.FAIL, "Cart Total "+productAmt+" and Item Total "+producttotal+" are Not Equal \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 
 				}
 				assertEquals(true, productAmt==producttotal);
@@ -601,25 +676,25 @@ public class Base
 		catch (Exception e) 
 		{
 
-			extentTest.log(Status.FAIL, "Added Product is not available in Checkout Overview");
+			threadLocalInstance.getextentTest().log(Status.FAIL, "Added Product is not available in Checkout Overview");
 
 		}
 	}
 
 	//Remove Product From Your Cart Page uing Product Name
-	public static void removeProduct_YourCart(String productName) throws IOException
+	public void removeProduct_YourCart(String productName) throws IOException
 	{
 		try
 		{			
 			elementScrollBy_DescriptionAndText("test-Cart Content", productName);
-			driver.findElement(MobileBy.xpath("//*[@text='"+productName+"']/../..//*[@text='REMOVE']")).click();
-			Base.productDetails.remove(productName);
-			extentTest.log(Status.PASS, productName+" removed from cart");
+			threadLocalDriver.getTLDriver().findElement(MobileBy.xpath("//*[@text='"+productName+"']/../..//*[@text='REMOVE']")).click();
+			threadLocalInstance.getproductDetails().remove(productName);
+			threadLocalInstance.getextentTest().log(Status.PASS, productName+" removed from cart");
 
 		}
 		catch (Exception e) 
 		{
-			extentTest.log(Status.FAIL, productName+" not removed from cart \n"+getLogCat_logss(driver.manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+			threadLocalInstance.getextentTest().log(Status.FAIL, productName+" not removed from cart \n"+getLogCat_logss(threadLocalDriver.getTLDriver().manage().logs().get("logcat")),MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 		}
 	}
 
@@ -635,5 +710,40 @@ public class Base
 		return amount2value;
 
 	}
+	
+	public AppiumDriver<MobileElement> intiDriver(String udid) throws MalformedURLException, InterruptedException {
+		DesiredCapabilities capabilities = new DesiredCapabilities();		
+		capabilities.setCapability(MobileCapabilityType.UDID, udid);
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
+		capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.swaglabsmobileapp");
+		capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.swaglabsmobileapp.MainActivity");
+		capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_DURATION, 15000);
+		capabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir")+"\\resources\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");		
+		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");				
+		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);
+		System.out.println(driver);
+		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		//driver.wait();
+		//Thread.sleep(1500);
+		//driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+		//WebDriverWait wait = new WebDriverWait(driver, 15);
+		//wait.until(ExpectedConditions.presenceOfElementLocated(MobileBy.xpath("//*[@text='LOGIN']"))).click();
+		
+			
+		
+		/*Wait wait = new FluentWait(driver)
+		        .withTimeout(10, TimeUnit.SECONDS)
+		        .pollingEvery(250, TimeUnit.MILLISECONDS)
+		        .ignoring(NoSuchElementException.class)
+		        .ignoring(TimeoutException.class);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//*[@text='LOGIN']")));*/
+		
+		Thread.sleep(3000);
+		return driver;
+	
+	
+	
+}
 
 }

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="Android Device Test(failed)">
+    <parameter name="uuid" value="R9ZN90E9SWE"/>
     <classes>
-      <class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC">
+      <class name="com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct">
         <methods>
+          <include name="swagLabsTC09" invocation-numbers="0"/>
           <include name="preTestCondition"/>
           <include name="postTestCondition"/>
-          <include name="swagLabsTC09"/>
         </methods>
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_ProblemUser_TC -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Android Device Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

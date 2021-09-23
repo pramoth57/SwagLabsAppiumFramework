@@ -6,25 +6,37 @@
 			/> -->
 	</listeners>
 
-	<test thread-count="5" name="Emulator Test">
+	<test name="Android Test">
+		<parameter name="uuid" value="5200c70e420a86f5" />
 		<classes>
 			<class name="com.SwagLabs.TestCases.SwagLabs_PreCondition" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC01" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC02" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC03" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC04" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC05" />
-			<class name="com.SwagLabs.TestCases.SwagLabs_PostCondition" />
+		    <class name="com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout" />
+		    <class name="com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct" />
+			<!--<class name="com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage" />
+			<class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC" /> -->
+		<class name="com.SwagLabs.TestCases.SwagLabs_PostCondition" />
 		</classes>
 	</test>
-	<test thread-count="5" name="Android Device Test">
+	<test name="Android Device Test">
+		<parameter name="uuid" value="R9ZN90E9SWE" />
 		<classes>
 			<class name="com.SwagLabs.TestCases.SwagLabs_PreCondition" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC06" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC07" />
-			<class name="com.SwagLabs.TestCases.SwagLab_TC08" />
-			<class name="com.SwagLabs.TestCases.SwagLab_ProblemUser_TC" />
-			<class name="com.SwagLabs.TestCases.SwagLabs_PostCondition" />
+			<!--<class name="com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout" />
+			 <class name="com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne" /> 
+			<class name="com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct" /> -->
+			<class name="com.SwagLabs.TestCases.SwagLab_TC06_AddProduct_Cancel_CheckoutInfo" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC07_AddProduct_Cancel_CheckoutOverview" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation" />
+			<class name="com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct" />
+		<class name="com.SwagLabs.TestCases.SwagLabs_PostCondition" />
 		</classes>
 	</test>
 	<!-- Test -->
