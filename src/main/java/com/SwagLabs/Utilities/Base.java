@@ -31,8 +31,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -57,12 +60,8 @@ public class Base
 {
 	public  AppiumDriverLocalService appium_Service;
 	public  AppiumDriver<MobileElement>  driver;
-	protected ThreadLocal<AppiumDriver<MobileElement>> threaddriver = new ThreadLocal<>();
+	//protected ThreadLocal<AppiumDriver<MobileElement>> threaddriver = new ThreadLocal<>();
 	ThreadLocalInstance threadLocalInstance = new ThreadLocalInstance();
-	//public AppiumDriver<MobileElement> driver;
-	//public static ExtentTest extentTest;
-	//public static ExtentTest extentTest;	
-	//private static ThreadLocal<ExtentTest> extent_test = new ThreadLocal<ExtentTest>();
 	public static String uuidVal;
 	public HashMap<String, String> productDetails = new HashMap<String, String>();
 	public static ExtentHtmlReporter htmlreporter;
@@ -71,7 +70,36 @@ public class Base
 	protected WebDriverWait wait;
 
 	
-	//@BeforeTest
+	@BeforeSuite
+	public void SetupExtentReport() throws IOException
+	{
+		Runtime.getRuntime().exec("taskkill /F /IM node.exe");
+		appium_Service = initiate_AppiumService();
+		intitate_extentReport();
+			
+	}
+	
+	@BeforeTest
+	@Parameters ({"uuid"})
+	public void preTestCondition(String uuid) throws IOException, InterruptedException
+	{
+		System.out.println(uuid);
+		threadLocalInstance.setTLDriver(intiDriver(uuid));
+					
+	}
+	
+	@AfterTest
+	public void postTestCondition() throws IOException
+	{
+		threadLocalInstance.unloadTLDriver();
+	}
+	
+	@AfterSuite
+	public void closeExtentReport()
+	{
+		extentReport_flush();
+		appium_Service.stop();
+	}
 	
 	
 		

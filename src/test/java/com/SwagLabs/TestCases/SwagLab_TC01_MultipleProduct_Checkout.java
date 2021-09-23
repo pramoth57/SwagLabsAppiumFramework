@@ -33,30 +33,15 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class SwagLab_TC01_MultipleProduct_Checkout extends Base{
-	AppiumDriver<MobileElement> driver;
+	
 	PageObjects pageObjectManager;
 	ThreadLocalInstance threadLocalInstance = new ThreadLocalInstance();
-	DesiredCapabilitiesUtil desiredCapabilitiesUtil = new DesiredCapabilitiesUtil();
-
-	@BeforeMethod
-	public void preTestCondition() throws IOException, InterruptedException
-	{
-		//Runtime.getRuntime().exec("taskkill /F /IM node.exe");
-		//Thread.sleep(3000);
-	}
-
 
 	@Test (enabled = true)
-	@Parameters ({"uuid"})
-	public void swagLabsTC01(String uuid) throws IOException, InterruptedException 
+	public void swagLabsTC01() throws IOException, InterruptedException 
 	{	
-		//extentTest = reports.createTest("Add Multiple Products and Perform Check out");
-		//appium_Service = initiate_AppiumService();		
-		//driver=capabilities("swagLagsapp");	
-		//pageObjectManager = new PageObjects(driver);
-
+		
 		threadLocalInstance.setextentTest(reports.createTest("Add Multiple Products and Perform Check out"));
-		threadLocalInstance.setTLDriver(intiDriver(uuid)); 
 		pageObjectManager = new PageObjects(threadLocalInstance.getTLDriver());		
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart(FileReader.getInstance().getConfigReader().getProduct_Listitem1());		
@@ -66,18 +51,9 @@ public class SwagLab_TC01_MultipleProduct_Checkout extends Base{
 		pageObjectManager.getSwagLabs_CheckoutComplete_Page().checkoutComplete();
 		pageObjectManager.get_SwagLabs_LoginPage_Page().logout();
 		
-		//threadLocalInstance.setTLDriver(null);  
 	}
 
-	@AfterMethod
-	public void postTestCondition()
-	{
-		//threadLocalInstance.unloadTLDriver();
-		//threadLocalInstance.unloadProductDetails();
-
-		//productDetails.clear();
-		//driver=null;
-	}
+	
 
 
 }

@@ -15,8 +15,8 @@ public class SwagLabs_PostCondition extends Base{
 	@AfterSuite
 	public void SetupExtentReport()
 	{
-		extentReport_flush();
-		appium_Service.stop();
+		//extentReport_flush();
+		//appium_Service.stop();
 	}
 
 }

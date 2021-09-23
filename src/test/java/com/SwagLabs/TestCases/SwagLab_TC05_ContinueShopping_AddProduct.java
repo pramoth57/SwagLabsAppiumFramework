@@ -33,32 +33,18 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class SwagLab_TC05_ContinueShopping_AddProduct extends Base{
-	AppiumDriver<MobileElement> driver;
+	
 	PageObjects pageObjectManager;
 	ThreadLocalInstance threadLocalInstance = new ThreadLocalInstance();
-	DesiredCapabilitiesUtil desiredCapabilitiesUtil = new DesiredCapabilitiesUtil();
+	
 
-	@BeforeMethod
-	public void preTestCondition() throws IOException, InterruptedException
-	{
-		//Runtime.getRuntime().exec("taskkill /F /IM node.exe");
-		//logger.info("Kill Existing Appium Instance");
-		//Thread.sleep(3000);
-	}
+	
 	@Test (enabled = true)
-	@Parameters ({"uuid"})
-	public void swagLabsTC05(String uuid) throws IOException, InterruptedException 
+	public void swagLabsTC05() throws IOException, InterruptedException 
 	{
-		//extentTest = reports.createTest("Add Single Products, Click Continue Shopping in YourCart Page and Add Another Product, Perform Checkout");
-		//appium_Service = initiate_AppiumService();
-		//driver=capabilities("swagLagsapp");	
-		//pageObjectManager = new PageObjects(driver);	
 		
 		threadLocalInstance.setextentTest(reports.createTest("Add Single Products, Click Continue Shopping in YourCart Page and Add Another Product, Perform Checkout"));
-		//threadLocalInstance.setTLDriver(desiredCapabilitiesUtil.intiDriver(uuid)); 
 		pageObjectManager = new PageObjects(threadLocalInstance.getTLDriver());
-		
-		
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();			
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart(FileReader.getInstance().getConfigReader().getProduct_item1());		
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().click_Continue();			
@@ -68,16 +54,10 @@ public class SwagLab_TC05_ContinueShopping_AddProduct extends Base{
 		pageObjectManager.get_SwagLabs_CheckoutOverView_Page().checkoutoverview_finish();			
 		pageObjectManager.getSwagLabs_CheckoutComplete_Page().checkoutComplete();
 		pageObjectManager.get_SwagLabs_LoginPage_Page().logout();
-		//appium_Service.stop();	
-
+		
 	}
 
-	@AfterMethod
-	public void postTestCondition()
-	{
-		//productDetails.clear();
-		//driver=null;
-	}
+	
 
 	
 }

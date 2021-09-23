@@ -33,34 +33,14 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
 public class SwagLab_TC02_SingleProduct_Checkout extends Base{
-	AppiumDriver<MobileElement> driver;
 	PageObjects pageObjectManager;
 	ThreadLocalInstance threadLocalInstance = new ThreadLocalInstance();
-	DesiredCapabilitiesUtil desiredCapabilitiesUtil = new DesiredCapabilitiesUtil();
-
-
-	@BeforeMethod
-	public void preTestCondition() throws IOException, InterruptedException
-	{
-		//Runtime.getRuntime().exec("taskkill /F /IM node.exe");
-		//Thread.sleep(3000);
-	}
-
 
 	@Test (enabled = true)
-	@Parameters ({"uuid"})
-	public void swagLabsTC02(String uuid) throws IOException, InterruptedException 
+	public void swagLabsTC02() throws IOException, InterruptedException 
 	{	
-		//extentTest = reports.createTest("Add Single Products and Perform Check out");
-
 		threadLocalInstance.setextentTest(reports.createTest("Add Single Products and Perform Check out"));
-		//threadLocalInstance.setTLDriver(desiredCapabilitiesUtil.intiDriver(uuid)); 
 		pageObjectManager = new PageObjects(threadLocalInstance.getTLDriver());
-
-		//appium_Service = initiate_AppiumService();		
-		//driver=capabilities("swagLagsapp");	
-		//pageObjectManager = new PageObjects(driver);
-		
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();
 		pageObjectManager.get_SwagLabs_ProductPage_Page().addProductToCart(FileReader.getInstance().getConfigReader().getProduct_item1());		
 		pageObjectManager.get_SwagLabs_YourCartPage_Page().checkout();			
@@ -68,19 +48,10 @@ public class SwagLab_TC02_SingleProduct_Checkout extends Base{
 		pageObjectManager.get_SwagLabs_CheckoutOverView_Page().checkoutoverview_finish();		
 		pageObjectManager.getSwagLabs_CheckoutComplete_Page().checkoutComplete();
 		pageObjectManager.get_SwagLabs_LoginPage_Page().logout();
-		//threadLocalInstance.setTLDriver(null);  
-
-		//appium_Service.stop();
+		
 	}	
 
-	@AfterMethod
-	public void postTestCondition()
-	{
-		//threadLocalInstance.unloadTLDriver();
-		//threadLocalInstance.unloadProductDetails();
-		//productDetails.clear();
-		//driver=null;
-	}
+	
 
 
 }
