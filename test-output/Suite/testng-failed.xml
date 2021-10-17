@@ -4,15 +4,15 @@
   <test thread-count="1" name="Android Test(failed)">
     <parameter name="uuid" value="5200c70e420a86f5"/>
     <classes>
-      <class name="com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct">
+      <class name="com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout">
         <methods>
           <include name="preTestCondition"/>
+          <include name="swagLabsTC01"/>
           <include name="SetupExtentReport"/>
-          <include name="swagLabsTC10"/>
           <include name="closeExtentReport"/>
           <include name="postTestCondition"/>
         </methods>
-      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout -->
     </classes>
   </test> <!-- Android Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

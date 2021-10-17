@@ -15,7 +15,7 @@ public class SwagLabs_PreCondition extends Base{
 	@BeforeSuite
 	public void SetupExtentReport(String uuid) throws IOException
 	{
-		System.out.println(uuid);
+		//System.out.println(uuid);
 		//Runtime.getRuntime().exec("taskkill /F /IM node.exe");
 		//appium_Service = initiate_AppiumService();
 		//intitate_extentReport();

@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.SwagLabs.ParallelTestCase.SwagLabsParallelTest">
+      <class name="com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout">
         <methods>
-          <include name="exitTestSuite"/>
-          <include name="test1"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="initTestSuite"/>
+          <include name="preTestCondition"/>
+          <include name="SetupExtentReport"/>
+          <include name="swagLabsTC02"/>
+          <include name="closeExtentReport"/>
+          <include name="postTestCondition"/>
         </methods>
-      </class> <!-- com.SwagLabs.ParallelTestCase.SwagLabsParallelTest -->
+      </class> <!-- com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

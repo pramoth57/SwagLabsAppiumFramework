@@ -83,7 +83,7 @@ public class Base
 	@Parameters ({"uuid"})
 	public void preTestCondition(String uuid) throws IOException, InterruptedException
 	{
-		System.out.println(uuid);
+		//System.out.println(uuid);
 		threadLocalInstance.setTLDriver(intiDriver(uuid));
 					
 	}
@@ -209,7 +209,7 @@ public class Base
 		if(driverDevice.equals("Android"))
 		{
 			deviceType= FileReader.getInstance().getConfigReader().getdeviceType();
-			device=(String) FileReader.getInstance().getConfigReader().getdevice();
+			device= FileReader.getInstance().getConfigReader().getdevice();
 		}
 		else
 		{
@@ -265,9 +265,7 @@ public class Base
 			}
 			catch (Exception e) 
 			{
-				// TODO: handle exception
-				threadLocalInstance.getextentTest().log(Status.FAIL, "Android Drive not Started Successfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
-
+					threadLocalInstance.getextentTest().log(Status.FAIL, "Android Drive not Started Successfully \n"+getLogCat_logss(driver.manage().logs().get("logcat")));
 			}
 		}
 		else if(os.equalsIgnoreCase("IOS"))
@@ -748,8 +746,7 @@ public class Base
 		capabilities.setCapability(AndroidMobileCapabilityType.APP_WAIT_DURATION, 15000);
 		capabilities.setCapability(MobileCapabilityType.APP,System.getProperty("user.dir")+"\\resources\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");		
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");				
-		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);
-		System.out.println(driver);
+		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,15);		
 		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		//driver.wait();
 		//Thread.sleep(1500);
@@ -766,7 +763,7 @@ public class Base
 		        .ignoring(TimeoutException.class);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(MobileBy.xpath("//*[@text='LOGIN']")));*/
-		
+		//System.out.println(driver);
 		Thread.sleep(3000);
 		return driver;
 	
