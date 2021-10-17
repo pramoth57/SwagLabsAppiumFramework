@@ -39,7 +39,7 @@ public class SwagLab_TC01_MultipleProduct_Checkout extends Base{
 
 	@Test (enabled = true)
 	public void swagLabsTC01() throws IOException, InterruptedException 
-	{		//Test01	
+	{	
 		threadLocalInstance.setextentTest(reports.createTest("Add Multiple Products and Perform Check out"));
 		pageObjectManager = new PageObjects(threadLocalInstance.getTLDriver());	
 		pageObjectManager.get_SwagLabs_LoginPage_Page().login_StandardUser();
