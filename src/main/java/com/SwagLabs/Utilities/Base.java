@@ -104,7 +104,7 @@ public class Base
 	//Initiate Extent Report instance
 	public static void intitate_extentReport()
 	{
-		////htmlreporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"\\Reports\\SwagLabsTesExecutiontReport_"+System.currentTimeMillis()+".html");
+		//htmlreporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"\\Reports\\SwagLabsTesExecutiontReport_"+System.currentTimeMillis()+".html");
 		htmlreporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"\\Reports\\SwagLabsTesExecutiontReport.html");
 		htmlreporter.config().setEncoding("utf-8");
 		htmlreporter.config().setDocumentTitle("SwagLabs Automation Reports");
