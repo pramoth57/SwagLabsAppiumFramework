@@ -6,7 +6,7 @@
 		<classes>				
 			
 		    <class name="com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout" />
-		   <!-- <class name="com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout" />
+		   <!--<class name="com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC04_MultipleProduct_RemoveOne" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC05_ContinueShopping_AddProduct" />
