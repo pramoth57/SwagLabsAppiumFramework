@@ -3,8 +3,7 @@
 <suite name="Suite" parallel="none" thread-count="1">	
 	<test name="Android Test">
 		<parameter name="uuid" value="5200c70e420a86f5" />
-		<classes>		
-		
+		<classes>				
 			<class name="com.SwagLabs.TestCases.SwagLabs_PreCondition" />
 		    <class name="com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout" />
 		    <class name="com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout" />
