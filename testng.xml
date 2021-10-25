@@ -4,7 +4,7 @@
 	<test name="Android Test">
 		<parameter name="uuid" value="5200c70e420a86f5" />
 		<classes>				
-			<class name="com.SwagLabs.TestCases.SwagLabs_PreCondition" />
+			
 		    <class name="com.SwagLabs.TestCases.SwagLab_TC01_MultipleProduct_Checkout" />
 		    <class name="com.SwagLabs.TestCases.SwagLab_TC02_SingleProduct_Checkout" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC03_MultipleProduct_RemoveAll" />
@@ -15,7 +15,7 @@
 			<class name="com.SwagLabs.TestCases.SwagLab_TC08_AddProduct_InventoryPage" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC09_ProblemUser_InventoryPageValidation" />
 			<class name="com.SwagLabs.TestCases.SwagLab_TC10_ProblemUser_AddMultipleProduct" />
-			<class name="com.SwagLabs.TestCases.SwagLabs_PostCondition" />
+			
 		</classes>
 	</test>	
 	<!-- Test -->
