@@ -69,23 +69,6 @@ public class SwagLabs_YourCartPage extends Base {
 		elementScrollByText("CHECKOUT");
 		elementClick(checkout, "CHECKOUT");
 		
-		/*elementVisibility("YOUR CART");
-
-		while(elementDispayed("REMOVE"))	
-		{
-			Thread.sleep(2000);
-			try
-			{
-				remove.get(0).click();
-			}
-			catch (Exception e) {
-				// TODO: handle exception
-			}
-		}
-		productDetails.clear();
-		elementScrollByText("CHECKOUT");
-		elementClick(checkout, "CHECKOUT");*/
-
 	}
 
 	public void remove_Checkout(String productName) throws InterruptedException, IOException

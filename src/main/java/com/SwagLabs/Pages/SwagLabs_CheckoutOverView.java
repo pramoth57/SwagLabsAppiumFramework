@@ -45,12 +45,7 @@ public class SwagLabs_CheckoutOverView extends Base{
 	
 	
 
-	public void checkoutoverview_finish1()
-	{		
-		//((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"FINISH\"));");
-		//finish.click();
-	}
-
+	
 	public void checkoutoverview_cancel() throws IOException
 	{		
 		elementVisibility("CHECKOUT: OVERVIEW");

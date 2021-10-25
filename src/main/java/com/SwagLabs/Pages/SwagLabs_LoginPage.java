@@ -26,8 +26,7 @@ public class SwagLabs_LoginPage extends Base{
 		this.driver=driver;
 	}
 
-	private String standard_user = "";
-	
+		
 	@AndroidFindBy(xpath = "//*[@text='standard_user']")
 	private WebElement standardUser;
 	
@@ -48,17 +47,7 @@ public class SwagLabs_LoginPage extends Base{
 	
 	public void login_StandardUser() throws IOException, InterruptedException
 	{ 
-		//((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"standard_user\"));");
-		//standardUser.click();
-		//((FindsByAndroidUIAutomator<MobileElement>) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"LOGIN\"));");
-		//standardUser.click();
-		//login_btn.click();
 		
-		//elementScrollByText1(driver,"standard_user");
-		//elementClick1(driver,standarduser1,"Standard User");
-		//elementScrollByText1(driver,"LOGIN");
-		//elementClick1(driver,login_btn1,"Login Button");
-		//driver.hideKeyboard();
 		Thread.sleep(3000);
 		elementScrollByText("standard_user");
 		elementClick(standardUser,"Standard User");
@@ -67,10 +56,8 @@ public class SwagLabs_LoginPage extends Base{
 	}
 	
 	public void logout() throws IOException, InterruptedException
-	{ 		
-		
+	{ 				
 		elementClick(menu,"Menu");
-		//elementScrollByText("LOGIN");
 		elementClick(logout,"Logout Button");
 	}
 	public void login_problemUser() throws IOException
